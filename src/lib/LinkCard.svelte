@@ -7,7 +7,7 @@
   const calcColor = (type: "hue" | "black", hue: number) => {
     switch (type) {
       case "hue":
-        return { h: hue, s: 50 };
+        return { h: hue, s: 60 };
       case "black":
         return { h: 0, s: 0 };
     }
@@ -48,13 +48,13 @@
     row-gap: 8px;
     column-gap: 12px;
     border-radius: 6px;
-    background-color: hsl(var(--bg-hue), var(--bg-saturation), 90%);
+    background-color: hsl(var(--bg-hue), var(--bg-saturation), 92%);
     box-shadow: 1px 1px 3px #9999;
     transition: background-color 0.2s, box-shadow 0.2s;
   }
   .card:hover {
     box-shadow: 2px 2px 6px #9999;
-    background-color: hsl(var(--bg-hue), var(--bg-saturation), 80%);
+    background-color: hsl(var(--bg-hue), var(--bg-saturation), 86%);
   }
   .service {
     grid-area: service;
