@@ -88,9 +88,10 @@
 
 <style>
   main {
-    width: 1000px;
+    max-width: 1000px;
     text-align: center;
     margin: 0 auto;
+    padding: 16px;
   }
   .header {
     font-size: 3.2em;
