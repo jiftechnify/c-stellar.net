@@ -9,8 +9,12 @@
 
 <main>
   <img class="large-icon" src={leafBlack} alt="icon" />
-  <h1 class="header">jiftechnify<span class="atmark">@</span>c-stellar.net</h1>
-  <p>
+  <h1 class="header">
+    jiftechnify<span class="header-domain"
+      ><span class="atmark">@</span>c-stellar.net</span
+    >
+  </h1>
+  <p class="bio">
     🇯🇵Japanese, 👨‍💻Full-stack™ SWE, 🥁Amature Percussionist, 🎹Rhythm Game Mania
   </p>
   <div class="contents">
@@ -88,29 +92,36 @@
 
 <style>
   main {
-    max-width: 1000px;
+    max-width: 900px;
     text-align: center;
     margin: 0 auto;
-    padding: 16px;
+    padding: 24px;
   }
+
   .header {
     font-size: 3.2em;
     line-height: 1.1;
     margin: 0;
   }
+  .header-domain {
+    display: inline-block;
+  }
   .atmark {
     color: #404a52;
   }
   .large-icon {
-    width: 200px;
-    height: 200px;
+    width: 12.5em;
+    height: 12.5em;
     border-radius: 50%;
+  }
+  .bio {
+    font-size: 1em;
   }
   .links {
     text-align: start;
   }
   .link-group {
-    margin-top: 24px;
+    margin-top: 1.5em;
   }
   .link-group-title {
     margin: 0;
@@ -118,14 +129,27 @@
   .link-cards {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 12px;
+    gap: 0.75em;
   }
-  .nip05-domain {
-    font-size: 20px;
-    font-weight: normal;
 
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+  .nip05-domain {
+    font-size: 0.6em;
+    font-weight: normal;
+  }
+
+  @media screen and (max-width: 900px) {
+    main {
+      max-width: 600px;
+      font-size: 14px;
+    }
+    .link-cards {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media screen and (max-width: 599px) {
+    main {
+      max-width: 400px;
+    }
   }
 </style>
