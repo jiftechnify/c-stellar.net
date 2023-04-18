@@ -137,7 +137,7 @@
     font-weight: normal;
   }
 
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 900px) {
     main {
       max-width: 600px;
       font-size: 14px;
