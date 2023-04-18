@@ -38,15 +38,15 @@
     text-decoration: none;
   }
   .card {
-    padding: 16px 24px;
+    padding: 1.0em 1.25em;
     display: grid;
     grid-template-areas:
       "service service service"
       "icon identity comments";
-    grid-template-rows: 24px 48px;
-    grid-template-columns: 48px minmax(0, 1fr);
-    row-gap: 8px;
-    column-gap: 12px;
+    grid-template-rows: 1.5em 3.0em;
+    grid-template-columns: 3.0em minmax(0, 1fr);
+    row-gap: 0.5em;
+    column-gap: 0.75em;
     border-radius: 6px;
     background-color: hsl(var(--bg-hue), var(--bg-saturation), 92%);
     box-shadow: 1px 1px 3px #9999;
@@ -62,11 +62,10 @@
   .identity {
     grid-area: identity;
     align-self: center;
-    font-size: 28px;
+    font-size: 1.8em;
     font-weight: bold;
-    overflow: hidden;
-    white-space: nowrap;
   }
+  
   .icon {
     grid-area: icon;
   }
