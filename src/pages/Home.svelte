@@ -17,69 +17,71 @@
     <div class="links">
       <div class="link-group">
         <h2 class="link-group-title">🪪 Identities on the Internet</h2>
-        <div class="link-cards">
-          <LinkCard
-            href="https://twitter.com/cstl_fy"
-            iconSrc={aegis}
-            colorType="hue"
-            hue={203}
-          >
-            <ServiceLabel
-              slot="service"
-              icon="brandico:twitter-bird"
-              iconColor="#1da1f2"
-              name="Twitter"
-            />
-            <span slot="identity">@cstl_fy</span>
-          </LinkCard>
-          <LinkCard
-            href="https://nostx.shino3.net/npub168ghgug469n4r2tuyw05dmqhqv5jcwm7nxytn67afmz8qkc4a4zqsu2dlc"
-            iconSrc={leafCastella}
-            colorType="hue"
-            hue={275}
-          >
-            <ServiceLabel slot="service" icon="noto:dodo" name="Nostr" />
-            <span slot="identity">
-              <span>jiftechnify</span><span class="nip05-domain"
-                >@c-stellar.net</span
-              >
-            </span>
-          </LinkCard>
-          <LinkCard
-            href="https://staging.bsky.app/profile/c-stellar.net"
-            iconSrc={leafBlack}
-            colorType="hue"
-            hue={185}
-          >
-            <ServiceLabel
-              slot="service"
-              icon="noto:diamond-with-a-dot"
-              name="Bluesky"
-            />
-            <span slot="identity">@c-stellar.net</span>
-          </LinkCard>
-          <LinkCard
-            href="https://misskey.io/@jiftechnify"
-            iconSrc={leafBlack}
-            colorType="hue"
-            hue={75}
-          >
-            <ServiceLabel
-              slot="service"
-              icon="skill-icons:misskey-light"
-              name="Misskey.io"
-            />
-            <span slot="identity">@jiftechnify</span>
-          </LinkCard>
-          <LinkCard href="https://github.com/jiftechnify" iconSrc={leafBlack}>
-            <ServiceLabel
-              slot="service"
-              icon="brandico:github"
-              iconColor="#333"
-              name="GitHub"
-            />
-            <span slot="identity">jiftechnify</span>
-          </LinkCard>
+        <div class="link-cards-container">
+          <div class="link-cards">
+            <LinkCard
+              href="https://twitter.com/cstl_fy"
+              iconSrc={aegis}
+              colorType="hue"
+              hue={203}
+            >
+              <ServiceLabel
+                slot="service"
+                icon="brandico:twitter-bird"
+                iconColor="#1da1f2"
+                name="Twitter"
+              />
+              <span slot="identity">@cstl_fy</span>
+            </LinkCard>
+            <LinkCard
+              href="https://nostx.shino3.net/npub168ghgug469n4r2tuyw05dmqhqv5jcwm7nxytn67afmz8qkc4a4zqsu2dlc"
+              iconSrc={leafCastella}
+              colorType="hue"
+              hue={275}
+            >
+              <ServiceLabel slot="service" icon="noto:dodo" name="Nostr" />
+              <span slot="identity">
+                <span>jiftechnify</span><span class="nip05-domain"
+                  >@c-stellar.net</span
+                >
+              </span>
+            </LinkCard>
+            <LinkCard
+              href="https://staging.bsky.app/profile/c-stellar.net"
+              iconSrc={leafBlack}
+              colorType="hue"
+              hue={185}
+            >
+              <ServiceLabel
+                slot="service"
+                icon="noto:diamond-with-a-dot"
+                name="Bluesky"
+              />
+              <span slot="identity">@c-stellar.net</span>
+            </LinkCard>
+            <LinkCard
+              href="https://misskey.io/@jiftechnify"
+              iconSrc={leafBlack}
+              colorType="hue"
+              hue={75}
+            >
+              <ServiceLabel
+                slot="service"
+                icon="skill-icons:misskey-light"
+                name="Misskey.io"
+              />
+              <span slot="identity">@jiftechnify</span>
+            </LinkCard>
+            <LinkCard href="https://github.com/jiftechnify" iconSrc={leafBlack}>
+              <ServiceLabel
+                slot="service"
+                icon="brandico:github"
+                iconColor="#333"
+                name="GitHub"
+              />
+              <span slot="identity">jiftechnify</span>
+            </LinkCard>
+          </div>
         </div>
       </div>
     </div>
@@ -92,6 +94,7 @@
     text-align: center;
     margin: 0 auto;
     padding: 16px;
+    font-size: 16px;
   }
   .header {
     font-size: 3.2em;
@@ -115,10 +118,19 @@
   .link-group-title {
     margin: 0;
   }
+  .link-cards-container {
+    container-type: inline-size;
+  }
   .link-cards {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 12px;
+  }
+  @container (max-width: 800px) {
+    .link-cards {
+      /* display: grid; */
+      grid-template-columns: 1fr;
+    }
   }
   .nip05-domain {
     font-size: 20px;
