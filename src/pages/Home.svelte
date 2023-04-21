@@ -50,7 +50,7 @@
             </span>
           </LinkCard>
           <LinkCard
-            href="https://staging.bsky.app/profile/c-stellar.net"
+            href="https://staging.bsky.app/profile/did:plc:p2czmqffycnlvftrikeuafvz"
             iconSrc={leafBlack}
             colorType="hue"
             hue={185}
