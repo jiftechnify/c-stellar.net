@@ -149,9 +149,11 @@
   }
 
   .openpgp4fpr {
+    font-family: monospace;
+    font-weight: normal;
     font-size: 0.75em;
-    white-space: pre;
     line-height: 1.2em;
+    white-space: pre;
   }
 
   @media screen and (max-width: 900px) {
