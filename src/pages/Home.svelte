@@ -84,6 +84,17 @@
             />
             <span slot="identity">jiftechnify</span>
           </LinkCard>
+          <LinkCard
+            href="https://keyoxide.org/2B5188D6E094B91FF21FCE20009040DA8C4F544C"
+            iconSrc={leafBlack}
+            colorType="hue"
+            hue={50}
+          >
+            <ServiceLabel slot="service" icon="noto:key" name="OpenPGP" />
+            <div slot="identity" class="openpgp4fpr">
+              {`2B51 88D6 E094 B91F F21F\nCE20 0090 40DA 8C4F 544C`}
+            </div>
+          </LinkCard>
         </div>
       </div>
     </div>
@@ -135,6 +146,12 @@
   .nip05-domain {
     font-size: 0.6em;
     font-weight: normal;
+  }
+
+  .openpgp4fpr {
+    font-size: 0.75em;
+    white-space: pre;
+    line-height: 1.2em;
   }
 
   @media screen and (max-width: 900px) {
