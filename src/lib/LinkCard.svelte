@@ -15,7 +15,7 @@
   $: bgColor = calcColor(colorType, hue);
 </script>
 
-<a {href} target="_blank" rel="noopener noreferrer">
+<a {href} target="_blank" rel="me noopener noreferrer">
   <div
     class="card"
     style="--bg-hue: {bgColor.h}; --bg-saturation: {bgColor.s}%"
