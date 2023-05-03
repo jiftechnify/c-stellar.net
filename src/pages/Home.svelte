@@ -5,6 +5,14 @@
   import aegis from "../assets/aegis.jpg";
   import leafBlack from "../assets/leaf_black.webp";
   import leafCastella from "../assets/leaf_castella.webp";
+
+  const bioItems = [
+    "🇯🇵Japanese",
+    "👨‍💻Full-stack™ SWE",
+    "🥁Amature Percussionist",
+    "🎹Rhythm Game Mania",
+    "🎒Travel Lover",
+  ];
 </script>
 
 <main>
@@ -15,7 +23,11 @@
     >
   </h1>
   <p class="bio">
-    🇯🇵Japanese, 👨‍💻Full-stack™ SWE, 🥁Amature Percussionist, 🎹Rhythm Game Mania, 🎒Travel Lover
+    {#each bioItems as bioItem, i}
+      <span class="bio-item">
+        {i === bioItems.length - 1 ? bioItem : `${bioItem}, `}
+      </span>
+    {/each}
   </p>
   <div class="contents">
     <div class="links">
@@ -127,6 +139,10 @@
   }
   .bio {
     font-size: 1em;
+  }
+  .bio-item {
+    display: inline-block;
+    white-space: pre;
   }
   .links {
     text-align: start;
