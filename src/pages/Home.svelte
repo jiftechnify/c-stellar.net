@@ -15,7 +15,7 @@
     >
   </h1>
   <p class="bio">
-    🇯🇵Japanese, 👨‍💻Full-stack™ SWE, 🥁Amature Percussionist, 🎹Rhythm Game Mania
+    🇯🇵Japanese, 👨‍💻Full-stack™ SWE, 🥁Amature Percussionist, 🎹Rhythm Game Mania, 🎒Travel Lover
   </p>
   <div class="contents">
     <div class="links">
