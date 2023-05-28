@@ -1,6 +1,4 @@
-const errorResp = (status: number, msg?: string): Response => {
-  return new Response(msg ?? "", { status });
-};
+import { errorResp } from '../utils';
 
 export const onRequestGet: PagesFunction<
   {
