@@ -7,9 +7,9 @@
   const calcColor = (type: "hue" | "black", hue: number) => {
     switch (type) {
       case "hue":
-        return { h: hue, s: 60 };
+        return { hue, sat: 60 };
       case "black":
-        return { h: 0, s: 0 };
+        return { hue: 0, sat: 0 };
     }
   };
   $: bgColor = calcColor(colorType, hue);
@@ -18,7 +18,8 @@
 <a {href} target="_blank" rel="me noopener noreferrer">
   <div
     class="card"
-    style="--bg-hue: {bgColor.h}; --bg-saturation: {bgColor.s}%"
+    style:--bg-hue={bgColor.hue}
+    style:--bg-sat="{bgColor.sat}%"
   >
     <div class="service">
       <slot name="service" />
@@ -48,13 +49,13 @@
     row-gap: 0.5em;
     column-gap: 0.75em;
     border-radius: 6px;
-    background-color: hsl(var(--bg-hue), var(--bg-saturation), 92%);
+    background-color: hsl(var(--bg-hue), var(--bg-sat), 92%);
     box-shadow: 1px 1px 3px #9999;
     transition: background-color 0.2s, box-shadow 0.2s;
   }
   .card:hover {
     box-shadow: 2px 2px 6px #9999;
-    background-color: hsl(var(--bg-hue), var(--bg-saturation), 86%);
+    background-color: hsl(var(--bg-hue), var(--bg-sat), 86%);
   }
   .service {
     grid-area: service;
