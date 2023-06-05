@@ -1,13 +1,21 @@
-<script lang="ts">
-  import Icon from "@iconify/svelte";
+<script lang="ts" context="module">
+  import type { ServiceIconProps } from "./ServiceIcon.svelte";
 
-  export let icon: string;
-  export let iconColor: string | undefined = undefined;
+  export type ServiceProps = {
+    name: string;
+    icon: ServiceIconProps;
+  };
+</script>
+
+<script lang="ts">
+  import ServiceIcon from "./ServiceIcon.svelte";
+
   export let name: string;
+  export let icon: ServiceIconProps;
 </script>
 
 <div class="wrapper">
-  <Icon icon={icon} width="1.1em" height="1.1em" color={iconColor} />
+  <ServiceIcon {icon} />
   <div class="name">{name}</div>
 </div>
 
@@ -17,7 +25,7 @@
     align-items: center;
     gap: 4px;
   }
-  .name{
+  .name {
     font-size: 1em;
   }
 </style>

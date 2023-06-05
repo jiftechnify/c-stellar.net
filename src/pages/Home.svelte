@@ -1,6 +1,5 @@
 <script lang="ts">
-  import LinkCard from "../lib/LinkCard.svelte";
-  import ServiceLabel from "../lib/ServiceLabel.svelte";
+  import LinkCard, { type IdCardProps } from "../lib/LinkCard.svelte";
 
   import aegis from "../assets/aegis.jpg";
   import leafBlack from "../assets/leaf_black.webp";
@@ -12,6 +11,115 @@
     "🥁Amature Percussionist",
     "🎹Rhythm Game Mania",
     "🎒Travel Lover",
+  ];
+
+  const identites: IdCardProps[] = [
+    {
+      service: {
+        name: "Twitter",
+        icon: {
+          name: "brandico:twitter-bird",
+          color: "#1da1f2",
+        },
+      },
+      idLink: { text: "@cstl_fy", url: "https://twitter.com/cstl_fy" },
+      avater: aegis,
+      bgColor: {
+        type: "hue",
+        hue: 203,
+      },
+    },
+    {
+      service: {
+        name: "Nostr",
+        icon: "noto:dodo",
+      },
+      idLink: 
+        {
+          text: "jiftechnify@c-stellar.net",
+          textStyle: "nip-05",
+          url: "https://nostx.shino3.net/npub168ghgug469n4r2tuyw05dmqhqv5jcwm7nxytn67afmz8qkc4a4zqsu2dlc",
+        },
+        
+      avater: leafCastella,
+      bgColor: {
+        type: "hue",
+        hue: 275,
+      },
+      qrCode: {
+        data: "nostr:npub168ghgug469n4r2tuyw05dmqhqv5jcwm7nxytn67afmz8qkc4a4zqsu2dlc",
+        caption: "Nostr URI to the profile",
+      },
+    },
+    {
+      service: {
+        name: "Bluesky",
+        icon: "noto:diamond-with-a-dot",
+      },
+      idLink: [
+        {
+          text: "@c-stellar.net",
+          url: "https://staging.bsky.app/profile/did:plc:p2czmqffycnlvftrikeuafvz",
+        },
+        {
+          text: "did:plc:p2czmqffycnlvftrikeuafvz",
+          textStyle: "didplc",
+          url: "https://staging.bsky.app/profile/did:plc:p2czmqffycnlvftrikeuafvz",
+        },
+      ],
+      avater: leafBlack,
+      bgColor: {
+        type: "hue",
+        hue: 185,
+      },
+    },
+    {
+      service: {
+        name: "Misskey.io",
+        icon: "skill-icons:misskey-light",
+      },
+      idLink: { text: "@jiftechnify", url: "https://misskey.io/@jiftechnify" },
+
+      avater: leafBlack,
+      bgColor: {
+        type: "hue",
+        hue: 75,
+      },
+    },
+    {
+      service: {
+        name: "GitHub",
+        icon: {
+          name: "brandico:github",
+          color: "#333",
+        },
+      },
+      idLink: { text: "jiftechnify", url: "https://github.com/jiftechnify" },
+      avater: leafBlack,
+      bgColor: {
+        type: "black",
+      },
+    },
+    {
+      service: {
+        name: "OpenPGP",
+        icon: "noto:key",
+      },
+      idLink: {
+        text: "2B5188D6E094B91FF21FCE20009040DA8C4F544C",
+        textStyle: "openpgp-fpr",
+        url: "https://keyoxide.org/2B5188D6E094B91FF21FCE20009040DA8C4F544C",
+      },
+      avater: leafBlack,
+      bgColor: {
+        type: "hue",
+        hue: 50,
+      },
+      qrCode: {
+        data: "openpgp4fpr:2B5188D6E094B91FF21FCE20009040DA8C4F544C",
+        caption: "OpenPGP Key Fingerprint",
+      },
+    },
   ];
 </script>
 
@@ -34,79 +142,9 @@
       <div class="link-group">
         <h2 class="link-group-title">🪪 Identities on the Internet</h2>
         <div class="link-cards">
-          <LinkCard
-            href="https://twitter.com/cstl_fy"
-            iconSrc={aegis}
-            colorType="hue"
-            hue={203}
-          >
-            <ServiceLabel
-              slot="service"
-              icon="brandico:twitter-bird"
-              iconColor="#1da1f2"
-              name="Twitter"
-            />
-            <span slot="identity">@cstl_fy</span>
-          </LinkCard>
-          <LinkCard
-            href="https://nostx.shino3.net/npub168ghgug469n4r2tuyw05dmqhqv5jcwm7nxytn67afmz8qkc4a4zqsu2dlc"
-            iconSrc={leafCastella}
-            colorType="hue"
-            hue={275}
-          >
-            <ServiceLabel slot="service" icon="noto:dodo" name="Nostr" />
-            <span slot="identity">
-              <span>jiftechnify</span><span class="nip05-domain"
-                >@c-stellar.net</span
-              >
-            </span>
-          </LinkCard>
-          <LinkCard
-            href="https://staging.bsky.app/profile/did:plc:p2czmqffycnlvftrikeuafvz"
-            iconSrc={leafBlack}
-            colorType="hue"
-            hue={185}
-          >
-            <ServiceLabel
-              slot="service"
-              icon="noto:diamond-with-a-dot"
-              name="Bluesky"
-            />
-            <span slot="identity">@c-stellar.net</span>
-          </LinkCard>
-          <LinkCard
-            href="https://misskey.io/@jiftechnify"
-            iconSrc={leafBlack}
-            colorType="hue"
-            hue={75}
-          >
-            <ServiceLabel
-              slot="service"
-              icon="skill-icons:misskey-light"
-              name="Misskey.io"
-            />
-            <span slot="identity">@jiftechnify</span>
-          </LinkCard>
-          <LinkCard href="https://github.com/jiftechnify" iconSrc={leafBlack}>
-            <ServiceLabel
-              slot="service"
-              icon="brandico:github"
-              iconColor="#333"
-              name="GitHub"
-            />
-            <span slot="identity">jiftechnify</span>
-          </LinkCard>
-          <LinkCard
-            href="https://keyoxide.org/2B5188D6E094B91FF21FCE20009040DA8C4F544C"
-            iconSrc={leafBlack}
-            colorType="hue"
-            hue={50}
-          >
-            <ServiceLabel slot="service" icon="noto:key" name="OpenPGP" />
-            <div slot="identity" class="openpgp4fpr">
-              {`2B51 88D6 E094 B91F F21F\nCE20 0090 40DA 8C4F 544C`}
-            </div>
-          </LinkCard>
+          {#each identites as ident (ident.service.name)}
+            <LinkCard {...ident} />
+          {/each}
         </div>
       </div>
     </div>
@@ -157,19 +195,6 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 0.75em;
-  }
-
-  .nip05-domain {
-    font-size: 0.6em;
-    font-weight: normal;
-  }
-
-  .openpgp4fpr {
-    font-family: monospace;
-    font-weight: normal;
-    font-size: 0.75em;
-    line-height: 1.2em;
-    white-space: pre;
   }
 
   @media screen and (max-width: 900px) {
