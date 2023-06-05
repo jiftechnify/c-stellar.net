@@ -26,6 +26,6 @@
     gap: 4px;
   }
   .name {
-    font-size: 1em;
+    font-size: 1.05em;
   }
 </style>

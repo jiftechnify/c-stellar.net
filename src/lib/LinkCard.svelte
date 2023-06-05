@@ -31,6 +31,8 @@
 </script>
 
 <script lang="ts">
+  import Icon from "@iconify/svelte";
+  import { slide } from "svelte/transition";
   import LinkCardText from "./LinkCardText";
   import ServiceLabel from "./ServiceLabel.svelte";
 
@@ -52,7 +54,7 @@
 
   let idLinkIdx = 0;
   $: currIdLink = Array.isArray(idLink) ? idLink[idLinkIdx] : idLink;
-  const handleTurnText = () => {
+  const handleToggleIdLink = () => {
     if (Array.isArray(idLink)) {
       idLinkIdx = (idLinkIdx + 1) % idLink.length;
     }
@@ -60,17 +62,17 @@
 
   $: linkTextComponent = (() => {
     if (currIdLink.textStyle === undefined) {
-      return LinkCardText.Plain
+      return LinkCardText.Plain;
     }
     switch (currIdLink.textStyle) {
-      case 'nip-05':
-        return LinkCardText.Nip05
-      case 'did-plc':
-        return LinkCardText.DidPlc
-      case 'openpgp-fpr':
-        return LinkCardText.OpenpgpFpr
+      case "nip-05":
+        return LinkCardText.Nip05;
+      case "did-plc":
+        return LinkCardText.DidPlc;
+      case "openpgp-fpr":
+        return LinkCardText.OpenpgpFpr;
     }
-  })()
+  })();
 </script>
 
 <div
@@ -87,7 +89,9 @@
       </div>
       <div class="buttons">
         {#if Array.isArray(idLink)}
-          <button on:click={handleTurnText}>toggle text</button>
+          <button on:click={handleToggleIdLink}>
+            <Icon icon="ci:arrows-reload-01" width="1em" height="1em" />
+          </button>
         {/if}
       </div>
     </div>
@@ -95,14 +99,21 @@
       <div class="avater">
         <img class="avater-img" src={avater} alt="avater" />
       </div>
-      <div class="identity">
-        <svelte:component this={linkTextComponent} linkText={currIdLink.text} />
+      <div class="link-text">
+        {#key currIdLink}
+          <div transition:slide={{duration: 150}}>
+            <svelte:component
+              this={linkTextComponent}
+              linkText={currIdLink.text}
+            />
+          </div>
+        {/key}
       </div>
     </div>
   </div>
 </div>
 
-<style>
+<style lang="scss">
   .card {
     position: relative;
     padding: 1em 1.25em;
@@ -134,14 +145,29 @@
     justify-content: space-between;
     width: 100%;
   }
-  
+
   .buttons {
     z-index: 1;
   }
 
+  .buttons > button {
+    all: unset;
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    border-radius: 100%;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.08);
+    transition: background-color 0.1s;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.12);
+    }
+  }
+
   .link-main {
     display: grid;
-    grid-template-areas: 'avater identity';
+    grid-template-areas: "avater identity";
     grid-template-columns: 3em minmax(0, 1fr);
     column-gap: 0.75em;
     height: 3em;
@@ -156,7 +182,7 @@
     box-shadow: 1px 1px 3px #9999;
   }
 
-  .identity {
+  .link-text {
     grid-area: identity;
     align-self: center;
   }
