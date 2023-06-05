@@ -13,7 +13,7 @@
   type IdLink = {
     url: string;
     text: string;
-    textStyle?: "nip-05" | "didplc" | "openpgp-fpr";
+    textStyle?: "nip-05" | "did-plc" | "openpgp-fpr";
   };
 
   type QrCodeProps = {
@@ -31,6 +31,7 @@
 </script>
 
 <script lang="ts">
+  import LinkCardText from "./LinkCardText";
   import ServiceLabel from "./ServiceLabel.svelte";
 
   export let service: ServiceProps;
@@ -56,6 +57,20 @@
       idLinkIdx = (idLinkIdx + 1) % idLink.length;
     }
   };
+
+  $: linkTextComponent = (() => {
+    if (currIdLink.textStyle === undefined) {
+      return LinkCardText.Plain
+    }
+    switch (currIdLink.textStyle) {
+      case 'nip-05':
+        return LinkCardText.Nip05
+      case 'did-plc':
+        return LinkCardText.DidPlc
+      case 'openpgp-fpr':
+        return LinkCardText.OpenpgpFpr
+    }
+  })()
 </script>
 
 <div
@@ -81,7 +96,7 @@
         <img class="avater-img" src={avater} alt="avater" />
       </div>
       <div class="identity">
-        {currIdLink.text}
+        <svelte:component this={linkTextComponent} linkText={currIdLink.text} />
       </div>
     </div>
   </div>
@@ -119,8 +134,7 @@
     justify-content: space-between;
     width: 100%;
   }
-  .service {
-  }
+  
   .buttons {
     z-index: 1;
   }
@@ -145,7 +159,5 @@
   .identity {
     grid-area: identity;
     align-self: center;
-    font-size: 1.8em;
-    font-weight: bold;
   }
 </style>

@@ -63,7 +63,7 @@
         },
         {
           text: "did:plc:p2czmqffycnlvftrikeuafvz",
-          textStyle: "didplc",
+          textStyle: "did-plc",
           url: "https://staging.bsky.app/profile/did:plc:p2czmqffycnlvftrikeuafvz",
         },
       ],
