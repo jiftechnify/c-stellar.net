@@ -93,6 +93,11 @@
             <Icon icon="ci:arrows-reload-01" width="1em" height="1em" />
           </button>
         {/if}
+        {#if qrCode}
+          <button>
+            <Icon icon="fluent:qr-code-24-regular" width="1em" height="1em" />
+          </button>
+        {/if}
       </div>
     </div>
     <div class="link-main">
@@ -101,7 +106,7 @@
       </div>
       <div class="link-text">
         {#key currIdLink}
-          <div transition:slide={{duration: 150}}>
+          <div transition:slide={{ duration: 150 }}>
             <svelte:component
               this={linkTextComponent}
               linkText={currIdLink.text}
