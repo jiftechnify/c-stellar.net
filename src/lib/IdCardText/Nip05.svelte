@@ -1,5 +1,5 @@
 <script lang="ts">
-  import LinkCardTextPlain from "./LinkCardTextPlain.svelte";
+  import Plain from "./Plain.svelte";
 
   export let linkText: string
   const parseNip05 = (text: string) => {
@@ -16,7 +16,7 @@
 {#if parsed.isNip05}
   <span class="name">{parsed.username}</span><span class="domain">{parsed.domain}</span>
 {:else}
-  <LinkCardTextPlain {linkText} />
+  <Plain {linkText} />
 {/if}
 
 <style>

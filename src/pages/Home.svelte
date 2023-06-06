@@ -1,5 +1,5 @@
 <script lang="ts">
-  import LinkCard, { type IdCardProps } from "../lib/LinkCard.svelte";
+  import IdentityCard, { type IdCardProps } from "../lib/IdentityCard.svelte";
 
   import aegis from "../assets/aegis.jpg";
   import leafBlack from "../assets/leaf_black.webp";
@@ -143,7 +143,7 @@
         <h2 class="link-group-title">🪪 Identities on the Internet</h2>
         <div class="link-cards">
           {#each identites as ident (ident.service.name)}
-            <LinkCard {...ident} />
+            <IdentityCard {...ident} />
           {/each}
         </div>
       </div>

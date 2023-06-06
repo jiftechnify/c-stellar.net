@@ -1,5 +1,5 @@
 <script lang="ts">
-  import LinkCardTextPlain from "./LinkCardTextPlain.svelte";
+  import Plain from "./Plain.svelte";
 
   export let linkText: string;
   const parseDidPlc = (text: string) => {
@@ -20,7 +20,7 @@
   did:plc:<br />
   <span class="id-part">{parsed.idPart}</span>
 {:else}
-  <LinkCardTextPlain {linkText} />
+  <Plain {linkText} />
 {/if}
 
 <style>

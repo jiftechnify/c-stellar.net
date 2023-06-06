@@ -1,5 +1,5 @@
 <script lang="ts">
-  import LinkCardTextPlain from "./LinkCardTextPlain.svelte";
+  import Plain from "./Plain.svelte";
 
   export let linkText: string;
   const splitFpr = (text: string) => {
@@ -15,7 +15,7 @@
   <span class="fpr">{r1}</span><br />
   <span class="fpr">{r2}</span>
 {:else}
-  <LinkCardTextPlain {linkText} />
+  <Plain {linkText} />
 {/if}
 
 <style>

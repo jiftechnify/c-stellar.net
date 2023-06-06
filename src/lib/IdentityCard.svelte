@@ -29,7 +29,7 @@
   import Icon from "@iconify/svelte";
   import { quintOut } from "svelte/easing";
   import { slide } from "svelte/transition";
-  import LinkCardText from "./LinkCardText";
+  import IdCardText from "./IdCardText";
   import Modal from "./Modal.svelte";
   import type { QrCodeProps } from "./QrCodeView.svelte";
   import QrCodeView from "./QrCodeView.svelte";
@@ -61,15 +61,15 @@
 
   $: linkTextComponent = (() => {
     if (currIdLink.textStyle === undefined) {
-      return LinkCardText.Plain;
+      return IdCardText.Plain;
     }
     switch (currIdLink.textStyle) {
       case "nip-05":
-        return LinkCardText.Nip05;
+        return IdCardText.Nip05;
       case "did-plc":
-        return LinkCardText.DidPlc;
+        return IdCardText.DidPlc;
       case "openpgp-fpr":
-        return LinkCardText.OpenpgpFpr;
+        return IdCardText.OpenpgpFpr;
     }
   })();
 
