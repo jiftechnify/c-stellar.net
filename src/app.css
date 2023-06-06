@@ -13,14 +13,23 @@
   -webkit-text-size-adjust: 100%;
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+button {
+  all: unset;
+  cursor: pointer;
 }
 
-#app {
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+body:has(dialog[open]) {
+  overflow-y: hidden;
+}
+
+div#app {
   width: 100vw;
 }
