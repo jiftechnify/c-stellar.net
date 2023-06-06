@@ -27,6 +27,7 @@
 
 <script lang="ts">
   import Icon from "@iconify/svelte";
+  import { quintOut } from "svelte/easing";
   import { slide } from "svelte/transition";
   import LinkCardText from "./LinkCardText";
   import Modal from "./Modal.svelte";
@@ -110,7 +111,7 @@
       </div>
       <div class="link-text">
         {#key currIdLink}
-          <div transition:slide={{ duration: 150 }}>
+          <div transition:slide={{ duration: 300, easing: quintOut }}>
             <svelte:component
               this={linkTextComponent}
               linkText={currIdLink.text}
