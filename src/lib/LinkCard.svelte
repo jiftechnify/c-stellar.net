@@ -90,7 +90,7 @@
       <div class="buttons">
         {#if Array.isArray(idLink)}
           <button on:click={handleToggleIdLink}>
-            <Icon icon="ci:arrows-reload-01" width="1em" height="1em" />
+            <Icon icon="ci:arrows-reload-01" width="1.2em" height="1.2em" />
           </button>
         {/if}
         {#if qrCode}
@@ -99,7 +99,7 @@
               showModal = true;
             }}
           >
-            <Icon icon="fluent:qr-code-24-regular" width="1em" height="1em" />
+            <Icon icon="fluent:qr-code-24-regular" width="1.2em" height="1.2em" />
           </button>
         {/if}
       </div>
