@@ -16,11 +16,6 @@
     textStyle?: "nip-05" | "did-plc" | "openpgp-fpr";
   };
 
-  type QrCodeProps = {
-    data: string;
-    caption: string;
-  };
-
   export type IdCardProps = {
     service: ServiceProps;
     idLink: IdLink | IdLink[];
@@ -34,6 +29,9 @@
   import Icon from "@iconify/svelte";
   import { slide } from "svelte/transition";
   import LinkCardText from "./LinkCardText";
+  import Modal from "./Modal.svelte";
+  import type { QrCodeProps } from "./QrCodeView.svelte";
+  import QrCodeView from "./QrCodeView.svelte";
   import ServiceLabel from "./ServiceLabel.svelte";
 
   export let service: ServiceProps;
@@ -73,6 +71,8 @@
         return LinkCardText.OpenpgpFpr;
     }
   })();
+
+  let showModal = false;
 </script>
 
 <div
@@ -94,7 +94,11 @@
           </button>
         {/if}
         {#if qrCode}
-          <button>
+          <button
+            on:click={() => {
+              showModal = true;
+            }}
+          >
             <Icon icon="fluent:qr-code-24-regular" width="1em" height="1em" />
           </button>
         {/if}
@@ -117,6 +121,12 @@
     </div>
   </div>
 </div>
+
+{#if qrCode}
+  <Modal bind:showModal>
+    <QrCodeView {...qrCode} />
+  </Modal>
+{/if}
 
 <style lang="scss">
   .card {
@@ -156,12 +166,10 @@
   }
 
   .buttons > button {
-    all: unset;
     display: flex;
     align-items: center;
     padding: 8px;
     border-radius: 100%;
-    cursor: pointer;
     background-color: rgba(0, 0, 0, 0.08);
     transition: background-color 0.1s;
 

@@ -156,7 +156,7 @@
     max-width: 900px;
     text-align: center;
     margin: 0 auto;
-    padding: 24px;
+    padding: 2.5em 1.5em 1em 1.5em;
   }
 
   .header {
