@@ -1,6 +1,7 @@
 <script lang="ts">
   import IdentityCard, { type IdCardProps } from "../lib/IdentityCard.svelte";
 
+  import Icon from "@iconify/svelte";
   import aegis from "../assets/aegis.jpg";
   import leafBlack from "../assets/leaf_black.webp";
   import leafCastella from "../assets/leaf_castella.webp";
@@ -34,13 +35,12 @@
         name: "Nostr",
         icon: "noto:dodo",
       },
-      idLink: 
-        {
-          text: "jiftechnify@c-stellar.net",
-          textStyle: "nip-05",
-          url: "https://nostx.shino3.net/npub168ghgug469n4r2tuyw05dmqhqv5jcwm7nxytn67afmz8qkc4a4zqsu2dlc",
-        },
-        
+      idLink: {
+        text: "jiftechnify@c-stellar.net",
+        textStyle: "nip-05",
+        url: "https://nostx.shino3.net/npub168ghgug469n4r2tuyw05dmqhqv5jcwm7nxytn67afmz8qkc4a4zqsu2dlc",
+      },
+
       avater: leafCastella,
       bgColor: {
         type: "hue",
@@ -125,9 +125,9 @@
 
 <main>
   <img class="large-icon" src={leafBlack} alt="icon" />
-  <h1 class="header">
-    jiftechnify<span class="header-domain"
-      ><span class="atmark">@</span>c-stellar.net</span
+  <h1 class="title">
+    jiftechnify<span class="title-domain"
+      ><span class="title-atmark">@</span>c-stellar.net</span
     >
   </h1>
   <p class="bio">
@@ -150,8 +150,16 @@
     </div>
   </div>
 </main>
+<footer>
+  <div class="footer-content">
+    <span class="copyright"> © jiftechnify </span>
+    <a href="https://github.com/jiftechnify/c-stellar.net">
+      <Icon icon="mdi:github" width="1.1em" height="1.1em" />
+    </a>
+  </div>
+</footer>
 
-<style>
+<style lang="scss">
   main {
     max-width: 900px;
     text-align: center;
@@ -159,23 +167,24 @@
     padding: 2.5em 1.5em 1em 1.5em;
   }
 
-  .header {
+  h1 {
     font-size: 3.2em;
     line-height: 1.1;
     margin: 0;
   }
-  .header-domain {
-    display: inline-block;
-  }
-  .atmark {
-    color: #404a52;
-  }
-  .large-icon {
+
+  img.large-icon {
     width: 12.5em;
     height: 12.5em;
     border-radius: 50%;
   }
-  .bio {
+  .title-domain {
+    display: inline-block;
+  }
+  .title-atmark {
+    color: #404a52;
+  }
+  p.bio {
     font-size: 1em;
   }
   .bio-item {
@@ -186,7 +195,7 @@
     text-align: start;
   }
   .link-group {
-    margin-top: 1.5em;
+    margin-top: 1em;
   }
   .link-group-title {
     margin: 0;
@@ -195,6 +204,30 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 0.75em;
+  }
+
+  footer {
+    position: sticky;
+    top: 100vh;
+    padding-bottom: 0.5em;
+    color: #666;
+
+    .footer-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .copyright {
+      font-size: 0.9em;
+    }
+
+    a {
+      all: unset;
+      cursor: pointer;
+      display: flex;
+    }
   }
 
   @media screen and (max-width: 900px) {

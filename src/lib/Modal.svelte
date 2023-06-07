@@ -9,6 +9,7 @@
     dialog.showModal();
   }
 
+  // animation while the dialog is hiding
   let hiding = false;
   const closeDialog = () => {
     if (dialog === undefined) {

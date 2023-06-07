@@ -17,17 +17,19 @@
 </script>
 
 {#if parsed.isDidPlc}
-  did:plc:<br />
-  <span class="id-part">{parsed.idPart}</span>
+  <span class="did-prefix">did:plc:</span><br />
+  <span class="did-body">{parsed.idPart}</span>
 {:else}
   <Plain {linkText} />
 {/if}
 
-<style>
-  span.id-part{
+<style lang="scss">
+  span {
     font-family: monospace;
-    font-weight: bold;
-    font-size: 1.5em;
-    line-height: 0.9em;
+
+    &.did-body {
+      font-size: 1.4em;
+      line-height: 0.9;
+    }
   }
 </style>

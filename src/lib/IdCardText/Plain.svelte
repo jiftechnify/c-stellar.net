@@ -1,5 +1,5 @@
 <script lang="ts">
-  export let linkText: string
+  export let linkText: string;
 </script>
 
 <span>{linkText}</span>

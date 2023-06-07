@@ -9,3 +9,9 @@ export default {
   DidPlc,
   OpenpgpFpr,
 };
+
+export type IdLink = {
+  url: string;
+  text: string;
+  textStyle?: "nip-05" | "did-plc" | "openpgp-fpr";
+};

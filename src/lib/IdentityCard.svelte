@@ -10,12 +10,6 @@
         type: "black";
       };
 
-  type IdLink = {
-    url: string;
-    text: string;
-    textStyle?: "nip-05" | "did-plc" | "openpgp-fpr";
-  };
-
   export type IdCardProps = {
     service: ServiceProps;
     idLink: IdLink | IdLink[];
@@ -29,7 +23,7 @@
   import Icon from "@iconify/svelte";
   import { quintOut } from "svelte/easing";
   import { slide } from "svelte/transition";
-  import IdCardText from "./IdCardText";
+  import IdCardText, { type IdLink } from "./IdCardText";
   import Modal from "./Modal.svelte";
   import type { QrCodeProps } from "./QrCodeView.svelte";
   import QrCodeView from "./QrCodeView.svelte";
@@ -41,7 +35,7 @@
   export let bgColor: CardBgColor;
   export let qrCode: QrCodeProps | undefined = undefined;
 
-  const calcColor = (bgColor: CardBgColor) => {
+  const calcColorHS = (bgColor: CardBgColor) => {
     switch (bgColor.type) {
       case "hue":
         return { hue: bgColor.hue, sat: 60 };
@@ -49,7 +43,7 @@
         return { hue: 0, sat: 0 };
     }
   };
-  $: bgColorHS = calcColor(bgColor);
+  $: bgColorHS = calcColorHS(bgColor);
 
   let idLinkIdx = 0;
   $: currIdLink = Array.isArray(idLink) ? idLink[idLinkIdx] : idLink;
@@ -100,7 +94,11 @@
               showModal = true;
             }}
           >
-            <Icon icon="fluent:qr-code-24-regular" width="1.2em" height="1.2em" />
+            <Icon
+              icon="fluent:qr-code-24-regular"
+              width="1.2em"
+              height="1.2em"
+            />
           </button>
         {/if}
       </div>
@@ -137,15 +135,16 @@
     background-color: hsl(var(--bg-hue), var(--bg-sat), 92%);
     box-shadow: 1px 1px 3px #9999;
     transition: background-color 0.2s, box-shadow 0.2s;
-  }
-  .card:hover {
-    box-shadow: 2px 2px 6px #9999;
-    background-color: hsl(var(--bg-hue), var(--bg-sat), 86%);
-  }
 
-  .card > a {
-    position: absolute;
-    inset: 0;
+    &:hover {
+      box-shadow: 2px 2px 6px #9999;
+      background-color: hsl(var(--bg-hue), var(--bg-sat), 86%);
+    }
+
+    > a {
+      position: absolute;
+      inset: 0;
+    }
   }
 
   .link-inner {
@@ -189,9 +188,12 @@
 
   .avater {
     grid-area: avater;
+    height: 3em;
   }
   .avater-img {
     width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
     border-radius: 50%;
     box-shadow: 1px 1px 3px #9999;
   }
