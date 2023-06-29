@@ -230,7 +230,7 @@
     }
   }
 
-  @media screen and (max-width: 900px) {
+  @media screen and (max-width: 1080px) {
     main {
       max-width: 600px;
       font-size: 14px;
@@ -243,6 +243,7 @@
   @media screen and (max-width: 599px) {
     main {
       max-width: 400px;
+      font-size: 12px;
     }
   }
 </style>
