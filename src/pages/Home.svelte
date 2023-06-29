@@ -161,7 +161,7 @@
 
 <style lang="scss">
   main {
-    max-width: 900px;
+    max-width: 1000px;
     text-align: center;
     margin: 0 auto;
     padding: 2.5em 1.5em 1em 1.5em;
