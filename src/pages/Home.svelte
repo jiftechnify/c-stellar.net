@@ -161,10 +161,10 @@
 
 <style lang="scss">
   main {
-    max-width: 1000px;
+    width: min(90%, 1000px);
     text-align: center;
     margin: 0 auto;
-    padding: 2.5em 1.5em 1em 1.5em;
+    padding-top: 2em;
   }
 
   h1 {
@@ -209,7 +209,7 @@
   footer {
     position: sticky;
     top: 100vh;
-    padding-bottom: 0.5em;
+    padding: 1em;
     color: #666;
 
     .footer-content {
@@ -232,7 +232,7 @@
 
   @media screen and (max-width: 1080px) {
     main {
-      max-width: 600px;
+      width: min(90%, 560px);
       font-size: 14px;
     }
     .link-cards {
@@ -242,7 +242,7 @@
 
   @media screen and (max-width: 599px) {
     main {
-      max-width: 400px;
+      width: min(90%, 400px);
       font-size: 12px;
     }
   }

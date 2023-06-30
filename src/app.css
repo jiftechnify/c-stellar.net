@@ -24,6 +24,7 @@ body {
   overflow-y: auto;
 }
 
+/* prevent the background of a dialog from scrolling while it's open */
 body:has(dialog[open]) {
   overflow-y: hidden;
 }
@@ -32,4 +33,9 @@ div#app {
   width: 100vw;
   min-width: 320px;
   min-height: 100vh;
+  
+  /* vertical centering */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
