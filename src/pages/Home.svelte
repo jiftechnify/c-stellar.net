@@ -9,7 +9,7 @@
   const bioItems = [
     "🇯🇵Japanese",
     "👨‍💻Full-stack™ SWE",
-    "🥁Amature Percussionist",
+    "🥁Amateur Percussionist",
     "🎹Rhythm Game Mania",
     "🎒Travel Lover",
   ];
