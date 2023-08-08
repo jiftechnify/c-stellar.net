@@ -17,10 +17,10 @@
   const identites: IdCardProps[] = [
     {
       service: {
-        name: "Twitter",
+        name: "X",
         icon: {
-          name: "brandico:twitter-bird",
-          color: "#1da1f2",
+          name: "simple-icons:x",
+          color: "#000",
         },
       },
       idLink: { text: "@cstl_fy", url: "https://twitter.com/cstl_fy" },
