@@ -23,7 +23,7 @@
   .wrapper {
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 0.4em;
   }
   .name {
     font-size: 1.05em;
