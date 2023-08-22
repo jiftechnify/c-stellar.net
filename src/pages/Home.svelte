@@ -38,7 +38,7 @@
       idLink: {
         text: "jiftechnify@c-stellar.net",
         textStyle: "nip-05",
-        url: "https://nostx.shino3.net/npub168ghgug469n4r2tuyw05dmqhqv5jcwm7nxytn67afmz8qkc4a4zqsu2dlc",
+        url: "https://nostr.com/npub168ghgug469n4r2tuyw05dmqhqv5jcwm7nxytn67afmz8qkc4a4zqsu2dlc",
       },
 
       avater: leafCastella,
@@ -47,8 +47,8 @@
         hue: 275,
       },
       qrCode: {
-        data: "nostr:npub168ghgug469n4r2tuyw05dmqhqv5jcwm7nxytn67afmz8qkc4a4zqsu2dlc",
-        caption: "Nostr URI to the profile",
+        data: "npub168ghgug469n4r2tuyw05dmqhqv5jcwm7nxytn67afmz8qkc4a4zqsu2dlc",
+        caption: "Nostr Public Key",
       },
     },
     {
