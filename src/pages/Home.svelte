@@ -59,12 +59,12 @@
       idLink: [
         {
           text: "@c-stellar.net",
-          url: "https://staging.bsky.app/profile/did:plc:p2czmqffycnlvftrikeuafvz",
+          url: "https://bsky.app/profile/did:plc:p2czmqffycnlvftrikeuafvz",
         },
         {
           text: "did:plc:p2czmqffycnlvftrikeuafvz",
           textStyle: "did-plc",
-          url: "https://staging.bsky.app/profile/did:plc:p2czmqffycnlvftrikeuafvz",
+          url: "https://bsky.app/profile/did:plc:p2czmqffycnlvftrikeuafvz",
         },
       ],
       avater: leafBlack,
