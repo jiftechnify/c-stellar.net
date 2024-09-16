@@ -91,6 +91,8 @@
       display: flex;
       align-items: center;
       padding: 4px;
+      width: 1.2em;
+      height: 1.2em;
     }
   }
 </style>
