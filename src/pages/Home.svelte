@@ -7,11 +7,11 @@
   import leafCastella from "../assets/leaf_castella.webp";
 
   const bioItems = [
-    "🇯🇵Japanese",
-    "👨‍💻Full-stack™ SWE",
-    "🥁Amateur Percussionist",
-    "🎹Rhythm Game Mania",
-    "🎒Travel Lover",
+    "🇯🇵 Japanese",
+    "👨‍💻 Full-stack™ SWE",
+    "🥁 Amateur Percussionist",
+    "🎹 Rhythm Game Mania",
+    "🎒 Travel Lover",
   ];
 
   const identities: IdCardProps[] = [
