@@ -14,7 +14,7 @@
     "🎒Travel Lover",
   ];
 
-  const identites: IdCardProps[] = [
+  const identities: IdCardProps[] = [
     {
       service: {
         name: "X",
@@ -142,7 +142,7 @@
       <div class="link-group">
         <h2 class="link-group-title">🪪 Identities on the Internet</h2>
         <div class="link-cards">
-          {#each identites as ident (ident.service.name)}
+          {#each identities as ident (ident.service.name)}
             <IdentityCard {...ident} />
           {/each}
         </div>
