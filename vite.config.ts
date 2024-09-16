@@ -1,15 +1,15 @@
 import { svelte } from "@sveltejs/vite-plugin-svelte";
 import { defineConfig } from "vite";
-import VitePluginInjectPreload from "vite-plugin-inject-preload";
+import injectPreload from "unplugin-inject-preload/vite";
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     svelte(),
-    VitePluginInjectPreload({
+    injectPreload({
       files: [
         {
-          match: /.+\.(webp|png|jpg)/,
+          entryMatch: /.+\.(webp|png|jpg)/,
         },
       ],
     }),
