@@ -14,13 +14,13 @@
   export let icon: ServiceIconProps;
 </script>
 
-<div class="wrapper">
+<div class="service">
   <ServiceIcon {icon} />
   <div class="name">{name}</div>
 </div>
 
 <style>
-  .wrapper {
+  .service {
     display: flex;
     align-items: center;
     gap: 0.4em;

@@ -79,9 +79,7 @@
   <a href={currIdLink.url} target="_blank" rel="me noopener noreferrer" />
   <div class="link-inner">
     <div class="link-header">
-      <div class="service">
-        <ServiceLabel {...service} />
-      </div>
+      <ServiceLabel {...service} />
       <div class="buttons">
         {#if Array.isArray(idLink)}
           <button on:click={handleToggleIdLink}>
