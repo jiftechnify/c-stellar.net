@@ -19,7 +19,7 @@
       service: {
         name: "X",
         icon: {
-          name: "simple-icons:x",
+          name: "mingcute:social-x-line",
           color: "#000",
         },
       },
@@ -54,7 +54,10 @@
     {
       service: {
         name: "Bluesky",
-        icon: "noto:diamond-with-a-dot",
+        icon: {
+          name: "mingcute:bluesky-social-fill",
+          color: "#1185FE",
+        },
       },
       idLink: [
         {
@@ -70,7 +73,7 @@
       avater: leafBlack,
       bgColor: {
         type: "hue",
-        hue: 185,
+        hue: 211,
       },
     },
     {
@@ -90,7 +93,7 @@
       service: {
         name: "GitHub",
         icon: {
-          name: "brandico:github",
+          name: "fe:github-alt",
           color: "#333",
         },
       },
