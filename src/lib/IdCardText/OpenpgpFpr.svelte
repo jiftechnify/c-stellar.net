@@ -5,7 +5,7 @@
   const splitFpr = (text: string) => {
     const rows = [text.slice(0, 20), text.slice(20)];
     return rows.map((r) =>
-      [0, 1, 2, 3, 4].map((i) => r.slice(i * 4, (i + 1) * 4)).join(" ")
+      [0, 1, 2, 3, 4].map((i) => r.slice(i * 4, (i + 1) * 4)).join(" "),
     );
   };
 </script>

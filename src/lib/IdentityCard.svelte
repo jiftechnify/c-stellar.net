@@ -132,7 +132,9 @@
     border-radius: 6px;
     background-color: hsl(var(--bg-hue), var(--bg-sat), 92%);
     box-shadow: 1px 1px 3px #9999;
-    transition: background-color 0.2s, box-shadow 0.2s;
+    transition:
+      background-color 0.2s,
+      box-shadow 0.2s;
 
     &:hover {
       box-shadow: 2px 2px 6px #9999;
