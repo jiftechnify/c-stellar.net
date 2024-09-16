@@ -154,28 +154,32 @@
   <div class="footer-content">
     <span class="copyright"> © jiftechnify </span>
     <a href="https://github.com/jiftechnify/c-stellar.net">
-      <Icon icon="mdi:github" width="1.1em" height="1.1em" />
+      <Icon icon="mdi:github" width="1.1rem" height="1.1rem" />
     </a>
   </div>
 </footer>
 
 <style lang="scss">
+  :root {
+    font-size: 16px;
+  }
+
   main {
     width: min(90%, 1000px);
     text-align: center;
     margin: 0 auto;
-    padding-top: 2em;
+    padding-top: 2rem;
   }
 
   h1 {
-    font-size: 3.2em;
+    font-size: 3.2rem;
     line-height: 1.1;
     margin: 0;
   }
 
   img.large-icon {
-    width: 12.5em;
-    height: 12.5em;
+    width: 12.5rem;
+    height: 12.5rem;
     border-radius: 50%;
   }
   .title-domain {
@@ -185,7 +189,7 @@
     color: #404a52;
   }
   p.bio {
-    font-size: 1em;
+    font-size: 1rem;
   }
   .bio-item {
     display: inline-block;
@@ -195,7 +199,7 @@
     text-align: start;
   }
   .link-group {
-    margin-top: 1em;
+    margin-top: 1rem;
   }
   .link-group-title {
     margin: 0;
@@ -203,13 +207,13 @@
   .link-cards {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 0.75em;
+    gap: 0.75rem;
   }
 
   footer {
     position: sticky;
     top: 100vh;
-    padding: 1em;
+    padding: 1rem;
     color: #666;
 
     .footer-content {
@@ -220,7 +224,7 @@
     }
 
     .copyright {
-      font-size: 0.9em;
+      font-size: 0.9rem;
     }
 
     a {
@@ -231,9 +235,12 @@
   }
 
   @media screen and (max-width: 1080px) {
+    :root {
+      font-size: 14px;
+    }
+
     main {
       width: min(90%, 560px);
-      font-size: 14px;
     }
     .link-cards {
       grid-template-columns: 1fr;
@@ -241,9 +248,11 @@
   }
 
   @media screen and (max-width: 599px) {
+    :root {
+      font-size: 12px;
+    }
     main {
       width: min(90%, 400px);
-      font-size: 12px;
     }
   }
 </style>

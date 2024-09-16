@@ -21,7 +21,7 @@
 <style>
   span.fpr {
     font-family: monospace;
-    font-size: 1.35em;
-    line-height: 1em;
+    font-size: 1.35rem;
+    line-height: 1rem;
   }
 </style>

@@ -23,9 +23,9 @@
   .service {
     display: flex;
     align-items: center;
-    gap: 0.4em;
+    gap: 0.4rem;
   }
   .name {
-    font-size: 1.05em;
+    font-size: 1.05rem;
   }
 </style>

@@ -6,7 +6,7 @@
 
 <style>
   span {
-    font-size: 1.8em;
+    font-size: 1.8rem;
     font-weight: bold;
   }
 </style>

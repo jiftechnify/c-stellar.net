@@ -45,14 +45,14 @@
         <Icon
           icon="fluent:checkmark-12-filled"
           color="#0a0"
-          width="1.2em"
-          height="1.2em"
+          width="1.2rem"
+          height="1.2rem"
         />
       {:else}
         <Icon
           icon="fluent:clipboard-multiple-16-regular"
-          width="1.2em"
-          height="1.2em"
+          width="1.2rem"
+          height="1.2rem"
         />
       {/if}
     </button>
@@ -61,8 +61,8 @@
 
 <style lang="scss">
   .wrapper {
-    padding: 1em;
-    max-width: 30em;
+    padding: 1rem;
+    max-width: 30rem;
   }
 
   figure {
@@ -73,7 +73,7 @@
   }
   figcaption {
     text-align: center;
-    font-size: 1.25em;
+    font-size: 1.25rem;
     font-weight: bold;
   }
 
@@ -84,15 +84,15 @@
 
     input {
       flex-grow: 1;
-      height: 1.2em;
+      height: 1.2rem;
     }
 
     button.btn-copy {
       display: flex;
       align-items: center;
       padding: 4px;
-      width: 1.2em;
-      height: 1.2em;
+      width: 1.2rem;
+      height: 1.2rem;
     }
   }
 </style>

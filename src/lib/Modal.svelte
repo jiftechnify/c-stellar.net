@@ -44,8 +44,8 @@
     <Icon
       icon="fluent:dismiss-12-filled"
       color="#333"
-      width="1.1em"
-      height="1.1em"
+      width="1.1rem"
+      height="1.1rem"
     />
   </button>
   <div on:click|stopPropagation>

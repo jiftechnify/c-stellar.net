@@ -25,11 +25,11 @@
 
 <style>
   span.name {
-    font-size: 1.8em;
+    font-size: 1.8rem;
     font-weight: bold;
   }
   span.domain {
-    font-size: 1em;
+    font-size: 1rem;
     font-weight: normal;
   }
 </style>

@@ -83,7 +83,7 @@
       <div class="buttons">
         {#if Array.isArray(idLink)}
           <button on:click={handleToggleIdLink}>
-            <Icon icon="ci:arrows-reload-01" width="1.2em" height="1.2em" />
+            <Icon icon="ci:arrows-reload-01" width="1.2rem" height="1.2rem" />
           </button>
         {/if}
         {#if qrCode}
@@ -94,8 +94,8 @@
           >
             <Icon
               icon="fluent:qr-code-24-regular"
-              width="1.2em"
-              height="1.2em"
+              width="1.2rem"
+              height="1.2rem"
             />
           </button>
         {/if}
@@ -128,7 +128,7 @@
 <style lang="scss">
   .card {
     position: relative;
-    padding: 1em 1.25em;
+    padding: 1rem 1.25rem;
     border-radius: 6px;
     background-color: hsl(var(--bg-hue), var(--bg-sat), 92%);
     box-shadow: 1px 1px 3px #9999;
@@ -150,11 +150,11 @@
   .link-inner {
     display: flex;
     flex-direction: column;
-    gap: 0.5em;
+    gap: 0.5rem;
   }
 
   .link-header {
-    height: 1.5em;
+    height: 1.5rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -181,14 +181,14 @@
   .link-main {
     display: grid;
     grid-template-areas: "avater identity";
-    grid-template-columns: 3em minmax(0, 1fr);
-    column-gap: 0.75em;
-    height: 3em;
+    grid-template-columns: 3rem minmax(0, 1fr);
+    column-gap: 0.75rem;
+    height: 3rem;
   }
 
   .avater {
     grid-area: avater;
-    height: 3em;
+    height: 3rem;
   }
   .avater-img {
     width: 100%;

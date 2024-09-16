@@ -28,7 +28,7 @@
     font-family: monospace;
 
     &.did-body {
-      font-size: 1.4em;
+      font-size: 1.4rem;
       line-height: 0.9;
     }
   }
