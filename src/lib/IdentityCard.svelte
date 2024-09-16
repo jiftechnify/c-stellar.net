@@ -75,8 +75,9 @@
   style:--bg-hue={bgColorHS.hue}
   style:--bg-sat="{bgColorHS.sat}%"
 >
-  <!-- svelte-ignore a11y-missing-content -->
-  <a href={currIdLink.url} target="_blank" rel="me noopener noreferrer" />
+  <a href={currIdLink.url} target="_blank" rel="me noopener noreferrer"
+    >{service.name}</a
+  >
   <div class="link-inner">
     <div class="link-header">
       <ServiceLabel {...service} />
@@ -144,13 +145,16 @@
     > a {
       position: absolute;
       inset: 0;
+      color: transparent;
     }
   }
 
   .link-inner {
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    z-index: 1;
   }
 
   .link-header {
@@ -159,10 +163,6 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
-  }
-
-  .buttons {
-    z-index: 1;
   }
 
   .buttons > button {
