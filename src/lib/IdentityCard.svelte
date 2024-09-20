@@ -188,7 +188,7 @@
     display: grid;
     grid-template-areas: "avater identity";
     grid-template-columns: 3rem minmax(0, 1fr);
-    column-gap: 0.75rem;
+    column-gap: 1rem;
     height: 3rem;
   }
 
