@@ -174,16 +174,17 @@
     padding-top: 2rem;
   }
 
+  img.large-icon {
+    width: 15rem;
+    height: 15rem;
+    border-radius: 50%;
+  }
+
   h1 {
     font-size: 3.2rem;
     line-height: 1.1;
     margin: 0;
-  }
-
-  img.large-icon {
-    width: 12.5rem;
-    height: 12.5rem;
-    border-radius: 50%;
+    padding-block: 0.75rem;
   }
   .title-domain {
     display: inline-block;
@@ -192,6 +193,7 @@
     color: #404a52;
   }
   p.bio {
+    margin: 0;
     font-size: 1rem;
   }
   .bio-item {
@@ -199,10 +201,13 @@
     white-space: pre;
   }
   .links {
+    margin-top: 2rem;
     text-align: start;
   }
   .link-group {
-    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
   }
   .link-group-title {
     margin: 0;
@@ -210,13 +215,14 @@
   .link-cards {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 0.75rem;
+    gap: 0.8rem;
   }
 
   footer {
     position: sticky;
     top: 100vh;
-    padding: 1rem;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
     color: #666;
 
     .footer-content {
