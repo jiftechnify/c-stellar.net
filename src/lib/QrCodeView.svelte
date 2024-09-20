@@ -15,7 +15,7 @@
   const qrImgUrl = QRCode.toDataURL(data, { width: 200 });
 
   let copied = false;
-  let copiedClearTimer = undefined;
+  let copiedClearTimer: ReturnType<typeof setTimeout> | undefined;
   const copyToClipboard = async () => {
     await navigator.clipboard.writeText(data);
 

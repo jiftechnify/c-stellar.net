@@ -19,6 +19,9 @@
     dialog.addEventListener("animationend", didHide, false);
   };
   const didHide = () => {
+    if (dialog === undefined) {
+      return;
+    }
     hiding = false;
     dialog.close();
     dialog.removeEventListener("animationend", didHide, false);
@@ -26,6 +29,7 @@
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
+<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
 <dialog
   bind:this={dialog}
   on:close={() => {
@@ -48,6 +52,7 @@
       height="1.1rem"
     />
   </button>
+  <!-- svelte-ignore a11y-no-static-element-interactions -->
   <div on:click|stopPropagation>
     <slot />
   </div>
