@@ -2,8 +2,8 @@
   import IdentityCard, { type IdCardProps } from "../lib/IdentityCard.svelte";
 
   import Icon from "../lib/Icon.svelte";
-  import aegis from "../assets/aegis.jpg";
-  import leafBlack from "../assets/leaf_black.webp";
+  import aegis from "../assets/aegis.webp";
+  import leafDark from "../assets/leaf_dark.webp";
   import leafCastella from "../assets/leaf_castella.webp";
 
   const bioItems = [
@@ -70,7 +70,7 @@
           url: "https://bsky.app/profile/did:plc:p2czmqffycnlvftrikeuafvz",
         },
       ],
-      avatar: leafBlack,
+      avatar: leafDark,
       bgColor: {
         type: "hue",
         hue: 211,
@@ -83,7 +83,7 @@
       },
       idLink: { text: "@jiftechnify", url: "https://misskey.io/@jiftechnify" },
 
-      avatar: leafBlack,
+      avatar: leafDark,
       bgColor: {
         type: "hue",
         hue: 75,
@@ -98,7 +98,7 @@
         },
       },
       idLink: { text: "jiftechnify", url: "https://github.com/jiftechnify" },
-      avatar: leafBlack,
+      avatar: leafDark,
       bgColor: {
         type: "black",
       },
@@ -113,7 +113,7 @@
         textStyle: "openpgp-fpr",
         url: "https://keyoxide.org/2B5188D6E094B91FF21FCE20009040DA8C4F544C",
       },
-      avatar: leafBlack,
+      avatar: leafDark,
       bgColor: {
         type: "hue",
         hue: 50,
@@ -127,7 +127,7 @@
 </script>
 
 <main>
-  <img class="hero-avatar" src={leafBlack} alt="jiftechnify's avatar" />
+  <img class="hero-avatar" src={leafDark} alt="jiftechnify's avatar" />
   <h1 class="title">
     jiftechnify<span class="title-domain"
       ><span class="title-atmark">&#8203;@&#8203;</span>c-stellar.net</span
