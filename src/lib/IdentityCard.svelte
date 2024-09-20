@@ -13,7 +13,7 @@
   export type IdCardProps = {
     service: ServiceProps;
     idLink: IdLink | IdLink[];
-    avater: string;
+    avatar: string;
     bgColor: CardBgColor;
     qrCode?: QrCodeProps;
   };
@@ -31,7 +31,7 @@
 
   export let service: ServiceProps;
   export let idLink: IdLink | IdLink[];
-  export let avater: string;
+  export let avatar: string;
   export let bgColor: CardBgColor;
   export let qrCode: QrCodeProps | undefined = undefined;
 
@@ -99,11 +99,11 @@
       </div>
     </div>
     <div class="main">
-      <div class="avater">
+      <div class="avatar">
         <img
-          class="avater-img"
-          src={avater}
-          alt={`avater on ${service.name}`}
+          class="avatar-img"
+          src={avatar}
+          alt={`avatar on ${service.name}`}
         />
       </div>
       <div class="text">
@@ -190,17 +190,17 @@
 
   .main {
     display: grid;
-    grid-template-areas: "avater identity";
+    grid-template-areas: "avatar identity";
     grid-template-columns: 3rem minmax(0, 1fr);
     column-gap: 1rem;
     height: 3rem;
   }
 
-  .avater {
-    grid-area: avater;
+  .avatar {
+    grid-area: avatar;
     height: 3rem;
   }
-  .avater-img {
+  .avatar-img {
     width: 100%;
     aspect-ratio: 1 / 1;
     object-fit: contain;

@@ -24,7 +24,7 @@
         },
       },
       idLink: { text: "@cstl_fy", url: "https://x.com/cstl_fy" },
-      avater: aegis,
+      avatar: aegis,
       bgColor: {
         type: "hue",
         hue: 203,
@@ -41,7 +41,7 @@
         url: "https://nostter.app/npub168ghgug469n4r2tuyw05dmqhqv5jcwm7nxytn67afmz8qkc4a4zqsu2dlc",
       },
 
-      avater: leafCastella,
+      avatar: leafCastella,
       bgColor: {
         type: "hue",
         hue: 275,
@@ -70,7 +70,7 @@
           url: "https://bsky.app/profile/did:plc:p2czmqffycnlvftrikeuafvz",
         },
       ],
-      avater: leafBlack,
+      avatar: leafBlack,
       bgColor: {
         type: "hue",
         hue: 211,
@@ -83,7 +83,7 @@
       },
       idLink: { text: "@jiftechnify", url: "https://misskey.io/@jiftechnify" },
 
-      avater: leafBlack,
+      avatar: leafBlack,
       bgColor: {
         type: "hue",
         hue: 75,
@@ -98,7 +98,7 @@
         },
       },
       idLink: { text: "jiftechnify", url: "https://github.com/jiftechnify" },
-      avater: leafBlack,
+      avatar: leafBlack,
       bgColor: {
         type: "black",
       },
@@ -113,7 +113,7 @@
         textStyle: "openpgp-fpr",
         url: "https://keyoxide.org/2B5188D6E094B91FF21FCE20009040DA8C4F544C",
       },
-      avater: leafBlack,
+      avatar: leafBlack,
       bgColor: {
         type: "hue",
         hue: 50,
@@ -127,7 +127,7 @@
 </script>
 
 <main>
-  <img class="large-icon" src={leafBlack} alt="icon" />
+  <img class="hero-avatar" src={leafBlack} alt="jiftechnify's avatar" />
   <h1 class="title">
     jiftechnify<span class="title-domain"
       ><span class="title-atmark">&#8203;@&#8203;</span>c-stellar.net</span
@@ -174,7 +174,7 @@
     padding-top: 2rem;
   }
 
-  img.large-icon {
+  img.hero-avatar {
     width: 15rem;
     height: 15rem;
     border-radius: 50%;
