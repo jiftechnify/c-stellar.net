@@ -6,7 +6,7 @@
 </script>
 
 <script lang="ts">
-  import Icon from "@iconify/svelte";
+  import Icon from "./Icon.svelte";
   import QRCode from "qrcode";
 
   export let data: string;
@@ -42,18 +42,9 @@
     <input type="text" readonly value={data} />
     <button type="button" class="btn-copy" on:click={() => copyToClipboard()}>
       {#if copied}
-        <Icon
-          icon="fluent:checkmark-12-filled"
-          color="#0a0"
-          width="1.2rem"
-          height="1.2rem"
-        />
+        <Icon icon="fluent:checkmark-12-filled" color="#0a0" size="1.2rem" />
       {:else}
-        <Icon
-          icon="fluent:clipboard-multiple-16-regular"
-          width="1.2rem"
-          height="1.2rem"
-        />
+        <Icon icon="fluent:clipboard-multiple-16-regular" size="1.2rem" />
       {/if}
     </button>
   </div>

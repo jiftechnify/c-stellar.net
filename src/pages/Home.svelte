@@ -1,7 +1,7 @@
 <script lang="ts">
   import IdentityCard, { type IdCardProps } from "../lib/IdentityCard.svelte";
 
-  import Icon from "@iconify/svelte";
+  import Icon from "../lib/Icon.svelte";
   import aegis from "../assets/aegis.jpg";
   import leafBlack from "../assets/leaf_black.webp";
   import leafCastella from "../assets/leaf_castella.webp";
@@ -157,7 +157,7 @@
   <div class="footer-content">
     <span class="copyright"> © jiftechnify </span>
     <a href="https://github.com/jiftechnify/c-stellar.net">
-      <Icon icon="mdi:github" width="1.1rem" height="1.1rem" />
+      <Icon icon="mdi:github" size="1.1rem" />
     </a>
   </div>
 </footer>

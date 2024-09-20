@@ -20,7 +20,6 @@
 </script>
 
 <script lang="ts">
-  import Icon from "@iconify/svelte";
   import { quintOut } from "svelte/easing";
   import { slide } from "svelte/transition";
   import IdCardText, { type IdLink } from "./IdCardText";
@@ -28,6 +27,7 @@
   import type { QrCodeProps } from "./QrCodeView.svelte";
   import QrCodeView from "./QrCodeView.svelte";
   import ServiceLabel from "./ServiceLabel.svelte";
+  import Icon from "./Icon.svelte";
 
   export let service: ServiceProps;
   export let idLink: IdLink | IdLink[];
@@ -84,7 +84,7 @@
       <div class="buttons">
         {#if Array.isArray(idLink)}
           <button on:click={handleToggleIdLink}>
-            <Icon icon="ci:arrows-reload-01" width="1.2rem" height="1.2rem" />
+            <Icon icon="ci:arrows-reload-01" size="1.2rem" />
           </button>
         {/if}
         {#if qrCode}
@@ -93,11 +93,7 @@
               showModal = true;
             }}
           >
-            <Icon
-              icon="fluent:qr-code-24-regular"
-              width="1.2rem"
-              height="1.2rem"
-            />
+            <Icon icon="fluent:qr-code-24-regular" size="1.2rem" />
           </button>
         {/if}
       </div>
