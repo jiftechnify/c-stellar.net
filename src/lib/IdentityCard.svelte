@@ -137,13 +137,14 @@
       background-color 0.2s,
       box-shadow 0.2s;
 
-    &:is(:hover, :focus-within) {
+    /* hovered, or one of children is focus-visible */
+    &:is(:hover, :has(:focus-visible)) {
       box-shadow: 2px 2px 6px #9999;
       background-color: hsl(var(--bg-hue), var(--bg-sat), 82%);
     }
 
-    /* one of inner elements except <button> is focused */
-    &:focus-within:not(:has(button:focus)) {
+    /* one of children except <button> is focus-visible */
+    &:has(:focus-visible):not(:has(button:focus-visible)) {
       outline: solid;
     }
 
@@ -182,10 +183,10 @@
     background-color: rgba(0, 0, 0, 0.08);
     transition: background-color 0.1s;
 
-    &:is(:hover, :focus) {
+    &:is(:hover, :focus-visible) {
       background-color: rgba(0, 0, 0, 0.12);
     }
-    &:focus {
+    &:focus-visible {
       outline: solid;
     }
   }
