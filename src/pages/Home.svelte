@@ -130,7 +130,7 @@
   <img class="large-icon" src={leafBlack} alt="icon" />
   <h1 class="title">
     jiftechnify<span class="title-domain"
-      ><span class="title-atmark">@</span>c-stellar.net</span
+      ><span class="title-atmark">&#8203;@&#8203;</span>c-stellar.net</span
     >
   </h1>
   <p class="bio">

@@ -16,7 +16,7 @@
 </script>
 
 {#if parsed.isNip05}
-  <span class="name">{parsed.username}</span><span class="domain"
+  <span class="name">{parsed.username}</span>&#8203;<span class="domain"
     >{parsed.domain}</span
   >
 {:else}
