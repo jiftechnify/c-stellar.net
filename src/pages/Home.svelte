@@ -23,7 +23,7 @@
           color: "#000",
         },
       },
-      idLink: { text: "@cstl_fy", url: "https://twitter.com/cstl_fy" },
+      idLink: { text: "@cstl_fy", url: "https://x.com/cstl_fy" },
       avater: aegis,
       bgColor: {
         type: "hue",
@@ -38,7 +38,7 @@
       idLink: {
         text: "jiftechnify@c-stellar.net",
         textStyle: "nip-05",
-        url: "https://nostr.com/npub168ghgug469n4r2tuyw05dmqhqv5jcwm7nxytn67afmz8qkc4a4zqsu2dlc",
+        url: "https://nostter.app/npub168ghgug469n4r2tuyw05dmqhqv5jcwm7nxytn67afmz8qkc4a4zqsu2dlc",
       },
 
       avater: leafCastella,
