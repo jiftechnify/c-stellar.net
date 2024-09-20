@@ -83,12 +83,18 @@
       <ServiceLabel {...service} />
       <div class="buttons">
         {#if Array.isArray(idLink)}
-          <button on:click={handleToggleIdLink}>
+          <button
+            type="button"
+            aria-label="show an alternative identity"
+            on:click={handleToggleIdLink}
+          >
             <Icon icon="ci:arrows-reload-01" size="1.2rem" />
           </button>
         {/if}
         {#if qrCode}
           <button
+            type="button"
+            aria-label="show QR code for the identity"
             on:click={() => {
               showModal = true;
             }}

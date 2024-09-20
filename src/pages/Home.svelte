@@ -156,7 +156,10 @@
 <footer>
   <div class="footer-content">
     <span class="copyright"> © jiftechnify </span>
-    <a href="https://github.com/jiftechnify/c-stellar.net">
+    <a
+      href="https://github.com/jiftechnify/c-stellar.net"
+      aria-label="GitHub repository for this site"
+    >
       <Icon icon="mdi:github" size="1.1rem" />
     </a>
   </div>
