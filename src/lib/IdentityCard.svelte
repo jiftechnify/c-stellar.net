@@ -145,7 +145,7 @@
     > a {
       position: absolute;
       inset: 0;
-      color: transparent;
+      opacity: 0;
     }
   }
 
