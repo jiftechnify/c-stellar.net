@@ -231,9 +231,9 @@
     }
 
     a {
-      all: unset;
-      cursor: pointer;
       display: flex;
+      text-decoration: none;
+      color: #666;
     }
   }
 

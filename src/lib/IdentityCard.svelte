@@ -137,9 +137,14 @@
       background-color 0.2s,
       box-shadow 0.2s;
 
-    &:hover {
+    &:is(:hover, :focus-within) {
       box-shadow: 2px 2px 6px #9999;
-      background-color: hsl(var(--bg-hue), var(--bg-sat), 86%);
+      background-color: hsl(var(--bg-hue), var(--bg-sat), 82%);
+    }
+
+    /* one of inner elements except <button> is focused */
+    &:focus-within:not(:has(button:focus)) {
+      outline: solid;
     }
 
     > a {
@@ -154,7 +159,7 @@
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    z-index: 1;
+    pointer-events: none;
   }
 
   .link-header {
@@ -165,6 +170,10 @@
     width: 100%;
   }
 
+  .buttons {
+    pointer-events: auto;
+  }
+
   .buttons > button {
     display: flex;
     align-items: center;
@@ -173,8 +182,11 @@
     background-color: rgba(0, 0, 0, 0.08);
     transition: background-color 0.1s;
 
-    &:hover {
+    &:is(:hover, :focus) {
       background-color: rgba(0, 0, 0, 0.12);
+    }
+    &:focus {
+      outline: solid;
     }
   }
 
