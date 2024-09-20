@@ -40,7 +40,7 @@
   </figure>
   <div class="data-text">
     <input type="text" readonly value={data} />
-    <button class="btn-copy" on:click={() => copyToClipboard()}>
+    <button type="button" class="btn-copy" on:click={() => copyToClipboard()}>
       {#if copied}
         <Icon
           icon="fluent:checkmark-12-filled"

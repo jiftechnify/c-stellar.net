@@ -186,9 +186,6 @@
     &:is(:hover, :focus-visible) {
       background-color: rgba(0, 0, 0, 0.12);
     }
-    &:focus-visible {
-      outline: solid;
-    }
   }
 
   .link-main {

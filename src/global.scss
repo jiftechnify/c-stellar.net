@@ -16,24 +16,28 @@
 button {
   all: unset;
   cursor: pointer;
+
+  &:focus-visible {
+    outline: solid 2px;
+  }
 }
 
 body {
   margin: 0;
   overflow-x: hidden;
   overflow-y: auto;
-}
 
-/* prevent the background of a dialog from scrolling while it's open */
-body:has(dialog[open]) {
-  overflow-y: hidden;
+  /* prevent the background of a dialog from scrolling while it's open */
+  &:has(dialog[open]) {
+    overflow-y: hidden;
+  }
 }
 
 div#app {
   width: 100vw;
   min-width: 320px;
   min-height: 100vh;
-  
+
   /* vertical centering */
   display: flex;
   flex-direction: column;
