@@ -53,7 +53,7 @@
     }
   };
 
-  $: linkTextComponent = (() => {
+  $: idCardTextComponent = (() => {
     if (currIdLink.textStyle === undefined) {
       return IdCardText.Plain;
     }
@@ -71,15 +71,15 @@
 </script>
 
 <div
-  class="card"
+  class="id-card"
   style:--bg-hue={bgColorHS.hue}
   style:--bg-sat="{bgColorHS.sat}%"
 >
   <a href={currIdLink.url} target="_blank" rel="me noopener noreferrer"
     >{service.name}</a
   >
-  <div class="link-inner">
-    <div class="link-header">
+  <div class="contents">
+    <div class="header">
       <ServiceLabel {...service} />
       <div class="buttons">
         {#if Array.isArray(idLink)}
@@ -98,15 +98,19 @@
         {/if}
       </div>
     </div>
-    <div class="link-main">
+    <div class="main">
       <div class="avater">
-        <img class="avater-img" src={avater} alt="avater" />
+        <img
+          class="avater-img"
+          src={avater}
+          alt={`avater on ${service.name}`}
+        />
       </div>
-      <div class="link-text">
+      <div class="text">
         {#key currIdLink}
           <div transition:slide={{ duration: 300, easing: quintOut }}>
             <svelte:component
-              this={linkTextComponent}
+              this={idCardTextComponent}
               linkText={currIdLink.text}
             />
           </div>
@@ -123,7 +127,7 @@
 {/if}
 
 <style lang="scss">
-  .card {
+  .id-card {
     position: relative;
     padding: 1rem 1.25rem;
     border-radius: 6px;
@@ -151,7 +155,7 @@
     }
   }
 
-  .link-inner {
+  .contents {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -159,7 +163,7 @@
     pointer-events: none;
   }
 
-  .link-header {
+  .header {
     height: 1.5rem;
     display: flex;
     align-items: center;
@@ -184,7 +188,7 @@
     }
   }
 
-  .link-main {
+  .main {
     display: grid;
     grid-template-areas: "avater identity";
     grid-template-columns: 3rem minmax(0, 1fr);
@@ -204,7 +208,7 @@
     box-shadow: 1px 1px 3px #9999;
   }
 
-  .link-text {
+  .text {
     grid-area: identity;
     align-self: center;
   }

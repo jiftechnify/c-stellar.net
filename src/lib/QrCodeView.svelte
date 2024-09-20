@@ -40,7 +40,7 @@
   </figure>
   <div class="data-text">
     <input type="text" readonly value={data} />
-    <button type="button" class="btn-copy" on:click={() => copyToClipboard()}>
+    <button type="button" name="copy-button" on:click={() => copyToClipboard()}>
       {#if copied}
         <Icon icon="fluent:checkmark-12-filled" color="#0a0" size="1.2rem" />
       {:else}
@@ -78,7 +78,7 @@
       height: 1.2rem;
     }
 
-    button.btn-copy {
+    button {
       display: flex;
       align-items: center;
       padding: 4px;
