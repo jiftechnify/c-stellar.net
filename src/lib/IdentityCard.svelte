@@ -144,9 +144,16 @@
       box-shadow 0.2s;
 
     /* hovered, or one of children is focus-visible */
-    &:is(:hover, :has(:focus-visible)) {
+    &:has(:focus-visible) {
       box-shadow: 2px 2px 6px #9999;
       background-color: hsl(var(--bg-hue), var(--bg-sat), 82%);
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        box-shadow: 2px 2px 6px #9999;
+        background-color: hsl(var(--bg-hue), var(--bg-sat), 82%);
+      }
     }
 
     /* one of children except <button> is focus-visible */
@@ -189,8 +196,14 @@
     background-color: rgba(0, 0, 0, 0.08);
     transition: background-color 0.1s;
 
-    &:is(:hover, :focus-visible) {
+    &:focus-visible {
       background-color: rgba(0, 0, 0, 0.12);
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.12);
+      }
     }
   }
 
