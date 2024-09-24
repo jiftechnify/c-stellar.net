@@ -167,14 +167,25 @@
 
 <style lang="scss">
   :root {
-    font-size: 16px;
+    font-size: 12px;
+    font-size: clamp(12px, 0.4vi + 10.18px, 16px);
+  }
+
+  :global(body) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 
   main {
-    width: min(90%, 1000px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    margin: 0 auto;
-    padding-top: 2rem;
+    width: max-content;
+    max-width: min(87.5vw, 1000px);
+    padding-block: 3rem;
   }
 
   img.hero-avatar {
@@ -203,7 +214,7 @@
     display: inline-block;
     white-space: pre;
   }
-  .links {
+  .contents {
     margin-top: 2rem;
     text-align: start;
   }
@@ -216,15 +227,14 @@
     margin: 0;
   }
   .link-cards {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-wrap: wrap;
     gap: 0.8rem;
   }
 
   footer {
     position: sticky;
     top: 100vh;
-    padding-top: 2rem;
     padding-bottom: 1rem;
     color: #666;
 
@@ -243,28 +253,6 @@
       display: flex;
       text-decoration: none;
       color: #666;
-    }
-  }
-
-  @media screen and (max-width: 1080px) {
-    :root {
-      font-size: 14px;
-    }
-
-    main {
-      width: min(90%, 560px);
-    }
-    .link-cards {
-      grid-template-columns: 1fr;
-    }
-  }
-
-  @media screen and (max-width: 599px) {
-    :root {
-      font-size: 12px;
-    }
-    main {
-      width: min(90%, 400px);
     }
   }
 </style>

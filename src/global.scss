@@ -13,19 +13,14 @@
   -webkit-text-size-adjust: 100%;
 }
 
-button {
-  all: unset;
-  cursor: pointer;
-
-  &:focus-visible {
-    outline: solid 2px;
-  }
-}
-
 body {
   margin: 0;
   overflow-x: hidden;
   overflow-y: auto;
+
+  width: 100vw;
+  min-width: 350px;
+  min-height: 100vh;
 
   /* prevent the background of a dialog from scrolling while it's open */
   &:has(dialog[open]) {
@@ -34,12 +29,18 @@ body {
 }
 
 div#app {
-  width: 100vw;
-  min-width: 320px;
-  min-height: 100vh;
+  display: contents;
+}
 
-  /* vertical centering */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+h1, h2, h3, h4, h5, h6, p, figure {
+  margin: 0;
+}
+
+button {
+  all: unset;
+  cursor: pointer;
+
+  &:focus-visible {
+    outline: solid 2px;
+  }
 }

@@ -57,7 +57,9 @@
   }
 
   figure {
-    margin-top: 24px;
+    padding-block-start: 24px;
+    padding-block-end: 16px;
+    padding-inline: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;

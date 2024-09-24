@@ -27,8 +27,12 @@
   span {
     font-family: monospace;
 
+    &.did-prefix {
+      font-size: 0.9rem;
+    }
+
     &.did-body {
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       line-height: 0.9;
     }
   }
