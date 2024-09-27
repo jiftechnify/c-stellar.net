@@ -1,7 +1,7 @@
 <script lang="ts">
   import IdentityCard, { type IdCardProps } from "../lib/IdentityCard.svelte";
 
-  import Icon from "../lib/Icon.svelte";
+  import IconifyIcon from "../lib/icon/IconifyIcon.svelte";
   import aegis from "../assets/aegis.webp";
   import leafDark from "../assets/leaf_dark.webp";
   import leafCastella from "../assets/leaf_castella.webp";
@@ -19,6 +19,7 @@
       service: {
         name: "X",
         icon: {
+          type: "iconify",
           name: "mingcute:social-x-line",
           color: "#000",
         },
@@ -33,7 +34,11 @@
     {
       service: {
         name: "Nostr",
-        icon: "noto:dodo",
+        icon: {
+          type: "svg",
+          name: "nostr",
+          color: "hsl(265, 100%, 50%)",
+        },
       },
       idLink: {
         text: "jiftechnify@c-stellar.net",
@@ -44,7 +49,7 @@
       avatar: leafCastella,
       bgColor: {
         type: "hue",
-        hue: 275,
+        hue: 265,
       },
       qrCode: {
         data: "npub168ghgug469n4r2tuyw05dmqhqv5jcwm7nxytn67afmz8qkc4a4zqsu2dlc",
@@ -55,6 +60,7 @@
       service: {
         name: "Bluesky",
         icon: {
+          type: "iconify",
           name: "mingcute:bluesky-social-fill",
           color: "#1185FE",
         },
@@ -79,7 +85,10 @@
     {
       service: {
         name: "Misskey.io",
-        icon: "skill-icons:misskey-light",
+        icon: {
+          type: "iconify",
+          name: "skill-icons:misskey-light",
+        },
       },
       idLink: { text: "@jiftechnify", url: "https://misskey.io/@jiftechnify" },
 
@@ -93,6 +102,7 @@
       service: {
         name: "GitHub",
         icon: {
+          type: "iconify",
           name: "fe:github-alt",
           color: "#333",
         },
@@ -106,7 +116,10 @@
     {
       service: {
         name: "OpenPGP",
-        icon: "noto:key",
+        icon: {
+          type: "iconify",
+          name: "noto:key",
+        },
       },
       idLink: {
         text: "2B5188D6E094B91FF21FCE20009040DA8C4F544C",
@@ -160,7 +173,7 @@
       href="https://github.com/jiftechnify/c-stellar.net"
       aria-label="GitHub repository for this site"
     >
-      <Icon icon="mdi:github" size="1.1rem" />
+      <IconifyIcon icon="mdi:github" size="1.1rem" />
     </a>
   </div>
 </footer>

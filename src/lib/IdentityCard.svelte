@@ -27,7 +27,7 @@
   import type { QrCodeProps } from "./QrCodeView.svelte";
   import QrCodeView from "./QrCodeView.svelte";
   import ServiceLabel from "./ServiceLabel.svelte";
-  import Icon from "./Icon.svelte";
+  import IconifyIcon from "./icon/IconifyIcon.svelte";
 
   export let service: ServiceProps;
   export let idLink: IdLink | IdLink[];
@@ -88,7 +88,7 @@
             aria-label="show an alternative identity"
             on:click={handleToggleIdLink}
           >
-            <Icon icon="ci:arrows-reload-01" size="1.2rem" />
+            <IconifyIcon icon="ci:arrows-reload-01" size="1.2rem" />
           </button>
         {/if}
         {#if qrCode}
@@ -99,7 +99,7 @@
               showModal = true;
             }}
           >
-            <Icon icon="fluent:qr-code-24-regular" size="1.2rem" />
+            <IconifyIcon icon="fluent:qr-code-24-regular" size="1.2rem" />
           </button>
         {/if}
       </div>
@@ -146,13 +146,13 @@
     /* hovered, or one of children is focus-visible */
     &:has(:focus-visible) {
       box-shadow: 2px 2px 6px #9999;
-      background-color: hsl(var(--bg-hue), var(--bg-sat), 82%);
+      background-color: hsl(var(--bg-hue), var(--bg-sat), 85%);
     }
 
     @media (any-hover: hover) {
       &:hover {
         box-shadow: 2px 2px 6px #9999;
-        background-color: hsl(var(--bg-hue), var(--bg-sat), 82%);
+        background-color: hsl(var(--bg-hue), var(--bg-sat), 85%);
       }
     }
 

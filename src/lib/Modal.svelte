@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Icon from "./Icon.svelte";
+  import IconifyIcon from "./icon/IconifyIcon.svelte";
 
   export let showModal: boolean;
 
@@ -45,7 +45,7 @@
       closeDialog();
     }}
   >
-    <Icon icon="fluent:dismiss-12-filled" color="#333" size="1.1rem" />
+    <IconifyIcon icon="fluent:dismiss-12-filled" color="#333" size="1.1rem" />
   </button>
   <!-- svelte-ignore a11y-no-static-element-interactions -->
   <div on:click|stopPropagation>

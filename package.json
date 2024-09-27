@@ -12,6 +12,7 @@
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20240909.0",
+    "@poppanator/sveltekit-svg": "^4.2.1",
     "@sveltejs/vite-plugin-svelte": "^2.0.0",
     "@tsconfig/svelte": "^5.0.0",
     "@types/qrcode": "^1.5.5",
