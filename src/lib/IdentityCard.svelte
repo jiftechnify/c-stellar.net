@@ -135,7 +135,6 @@
 <style lang="scss">
   .id-card {
     position: relative;
-    flex: 1 1 24rem;
     padding: 1rem 1.25rem;
     border-radius: 6px;
     background-color: hsl(var(--bg-hue), var(--bg-sat), 92%);

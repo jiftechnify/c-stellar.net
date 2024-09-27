@@ -167,8 +167,8 @@
 
 <style lang="scss">
   :root {
-    font-size: 12px;
-    font-size: clamp(12px, 0.4vi + 10.18px, 16px);
+    font-size: 0.75rem;
+    font-size: clamp(0.75rem, 0.539vw + 0.615rem, 1rem);
   }
 
   :global(body) {
@@ -183,8 +183,7 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    width: max-content;
-    max-width: min(87.5vw, 1000px);
+    width: min(87.5vw, 1000px);
     padding-block: 3rem;
   }
 
@@ -217,6 +216,7 @@
   .contents {
     margin-top: 2rem;
     text-align: start;
+    width: 100%;
   }
   .link-group {
     display: flex;
@@ -227,8 +227,8 @@
     margin: 0;
   }
   .link-cards {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(26rem, 1fr));
     gap: 0.8rem;
   }
 
