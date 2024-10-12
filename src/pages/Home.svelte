@@ -40,11 +40,18 @@
           color: "hsl(265, 100%, 50%)",
         },
       },
-      idLink: {
-        text: "jiftechnify@c-stellar.net",
-        textStyle: "nip-05",
-        url: "https://nostter.app/npub168ghgug469n4r2tuyw05dmqhqv5jcwm7nxytn67afmz8qkc4a4zqsu2dlc",
-      },
+      idLink: [
+        {
+          text: "jiftechnify@c-stellar.net",
+          textStyle: "nip-05",
+          url: "https://nostter.app/jiftechnify@c-stellar.net",
+        },
+        {
+          text: "npub168ghgug469n4r2tuyw05dmqhqv5jcwm7nxytn67afmz8qkc4a4zqsu2dlc",
+          textStyle: "bech32",
+          url: "https://nostter.app/npub168ghgug469n4r2tuyw05dmqhqv5jcwm7nxytn67afmz8qkc4a4zqsu2dlc",
+        },
+      ],
 
       avatar: leafCastella,
       bgColor: {
@@ -68,7 +75,7 @@
       idLink: [
         {
           text: "@c-stellar.net",
-          url: "https://bsky.app/profile/did:plc:p2czmqffycnlvftrikeuafvz",
+          url: "https://bsky.app/profile/c-stellar.net",
         },
         {
           text: "did:plc:p2czmqffycnlvftrikeuafvz",
@@ -84,18 +91,27 @@
     },
     {
       service: {
-        name: "Misskey.io",
+        name: "Concrnt",
         icon: {
-          type: "iconify",
-          name: "skill-icons:misskey-light",
+          type: "svg",
+          name: "concrnt",
         },
       },
-      idLink: { text: "@jiftechnify", url: "https://misskey.io/@jiftechnify" },
-
-      avatar: leafDark,
+      idLink: [
+        {
+          text: "@c-stellar.net",
+          url: "https://concrnt.world/c-stellar.net",
+        },
+        {
+          text: "con107uc3dgc99t2htuw2u33d5ra7cu5wjqj8tg8dj",
+          textStyle: "bech32",
+          url: "https://concrnt.world/con107uc3dgc99t2htuw2u33d5ra7cu5wjqj8tg8dj",
+        },
+      ],
+      avatar: leafCastella,
       bgColor: {
         type: "hue",
-        hue: 75,
+        hue: 191,
       },
     },
     {

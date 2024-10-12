@@ -60,6 +60,8 @@
     switch (currIdLink.textStyle) {
       case "nip-05":
         return IdCardText.Nip05;
+      case "bech32":
+        return IdCardText.Bech32;
       case "did-plc":
         return IdCardText.DidPlc;
       case "openpgp-fpr":
@@ -185,6 +187,8 @@
   }
 
   .buttons {
+    display: flex;
+    gap: 0.5rem;
     pointer-events: auto;
   }
 
