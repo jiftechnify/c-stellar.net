@@ -1,5 +1,8 @@
 <script lang="ts">
-  export let linkText: string;
+  type Props = {
+    linkText: string;
+  };
+  let { linkText }: Props = $props();
 </script>
 
 <span>{linkText}</span>

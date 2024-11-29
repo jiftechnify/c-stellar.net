@@ -1,4 +1,4 @@
-<script context="module" lang="ts">
+<script module lang="ts">
   import type { ServiceProps } from "./ServiceLabel.svelte";
 
   type CardBgColor =
@@ -29,11 +29,13 @@
   import ServiceLabel from "./ServiceLabel.svelte";
   import IconifyIcon from "./icon/IconifyIcon.svelte";
 
-  export let service: ServiceProps;
-  export let idLink: IdLink | IdLink[];
-  export let avatar: string;
-  export let bgColor: CardBgColor;
-  export let qrCode: QrCodeProps | undefined = undefined;
+  let {
+    service,
+    idLink,
+    avatar,
+    bgColor,
+    qrCode = undefined,
+  }: IdCardProps = $props();
 
   const calcColorHS = (bgColor: CardBgColor) => {
     switch (bgColor.type) {
@@ -43,17 +45,17 @@
         return { hue: 0, sat: 0 };
     }
   };
-  $: bgColorHS = calcColorHS(bgColor);
+  let bgColorHS = $derived(calcColorHS(bgColor));
 
-  let idLinkIdx = 0;
-  $: currIdLink = Array.isArray(idLink) ? idLink[idLinkIdx] : idLink;
+  let idLinkIdx = $state(0);
+  let currIdLink = $derived(Array.isArray(idLink) ? idLink[idLinkIdx] : idLink);
   const handleToggleIdLink = () => {
     if (Array.isArray(idLink)) {
       idLinkIdx = (idLinkIdx + 1) % idLink.length;
     }
   };
 
-  $: idCardTextComponent = (() => {
+  let IdCardTextComponent = $derived.by(() => {
     if (currIdLink.textStyle === undefined) {
       return IdCardText.Plain;
     }
@@ -67,9 +69,9 @@
       case "openpgp-fpr":
         return IdCardText.OpenpgpFpr;
     }
-  })();
+  });
 
-  let showModal = false;
+  let showModal = $state(false);
 </script>
 
 <div
@@ -88,7 +90,7 @@
           <button
             type="button"
             aria-label="show an alternative identity"
-            on:click={handleToggleIdLink}
+            onclick={handleToggleIdLink}
           >
             <IconifyIcon icon="ci:arrows-reload-01" size="1.2rem" />
           </button>
@@ -97,7 +99,7 @@
           <button
             type="button"
             aria-label="show QR code for the identity"
-            on:click={() => {
+            onclick={() => {
               showModal = true;
             }}
           >
@@ -117,10 +119,7 @@
       <div class="text">
         {#key currIdLink}
           <div transition:slide={{ duration: 300, easing: quintOut }}>
-            <svelte:component
-              this={idCardTextComponent}
-              linkText={currIdLink.text}
-            />
+            <IdCardTextComponent linkText={currIdLink.text} />
           </div>
         {/key}
       </div>

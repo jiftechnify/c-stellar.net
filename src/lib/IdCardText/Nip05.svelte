@@ -1,7 +1,11 @@
 <script lang="ts">
   import Plain from "./Plain.svelte";
 
-  export let linkText: string;
+  type Props = {
+    linkText: string;
+  };
+  let { linkText }: Props = $props();
+
   const parseNip05 = (text: string) => {
     const atIdx = text.indexOf("@");
     return atIdx >= 0
@@ -12,7 +16,7 @@
         }
       : { isNip05: false };
   };
-  $: parsed = parseNip05(linkText);
+  let parsed = $derived(parseNip05(linkText));
 </script>
 
 {#if parsed.isNip05}

@@ -1,4 +1,4 @@
-<script lang="ts" context="module">
+<script module lang="ts">
   export type QrCodeProps = {
     data: string;
     caption: string;
@@ -9,12 +9,11 @@
   import IconifyIcon from "./icon/IconifyIcon.svelte";
   import QRCode from "qrcode";
 
-  export let data: string;
-  export let caption: string;
+  let { data, caption }: QrCodeProps = $props();
 
   const qrImgUrl = QRCode.toDataURL(data, { width: 200 });
 
-  let copied = false;
+  let copied = $state(false);
   let copiedClearTimer: ReturnType<typeof setTimeout> | undefined;
   const copyToClipboard = async () => {
     await navigator.clipboard.writeText(data);
@@ -40,7 +39,7 @@
   </figure>
   <div class="data-text">
     <input type="text" readonly value={data} />
-    <button type="button" name="copy-button" on:click={() => copyToClipboard()}>
+    <button type="button" name="copy-button" onclick={() => copyToClipboard()}>
       {#if copied}
         <IconifyIcon
           icon="fluent:checkmark-12-filled"

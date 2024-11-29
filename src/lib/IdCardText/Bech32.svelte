@@ -1,5 +1,8 @@
 <script lang="ts">
-  export let linkText: string;
+  type Props = {
+    linkText: string;
+  };
+  let { linkText }: Props = $props();
 
   type Bech32Parts = {
     prefix: string;
@@ -19,7 +22,7 @@
       body: text.substring(sepIdx + 1),
     };
   };
-  $: parsed = parseBech32(linkText);
+  let parsed = $derived(parseBech32(linkText));
 </script>
 
 <div class="bech32" tabindex="-1">

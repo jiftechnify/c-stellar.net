@@ -1,16 +1,24 @@
 <script lang="ts">
   import "iconify-icon";
 
-  export let icon: string;
+  type IconifyIconProps = {
+    icon: string;
+    color?: string;
+    size?: string;
+    width?: string;
+    height?: string;
+  };
 
-  export let color: string = "#000";
+  let {
+    icon,
+    color = "#000",
+    size = undefined,
+    width = undefined,
+    height = undefined,
+  }: IconifyIconProps = $props();
 
-  export let size: string | undefined = undefined;
-  export let width: string | undefined = undefined;
-  export let height: string | undefined = undefined;
-
-  $: w = size ?? width ?? "1rem";
-  $: h = size ?? height ?? "1rem";
+  let w = $derived(size ?? width ?? "1rem");
+  let h = $derived(size ?? height ?? "1rem");
 </script>
 
 <iconify-icon

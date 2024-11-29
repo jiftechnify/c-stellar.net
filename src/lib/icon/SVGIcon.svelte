@@ -1,4 +1,4 @@
-<script context="module" lang="ts">
+<script module lang="ts">
   import nostrSvg from "../../assets/nostr.svg?component";
   import concrntSvg from "../../assets/concrnt.svg?component";
 
@@ -10,18 +10,26 @@
 </script>
 
 <script lang="ts">
-  export let icon: SVGIconName;
-  export let color: string | undefined = undefined;
+  type SVGIconProps = {
+    icon: SVGIconName;
+    color?: string;
+    size?: string;
+    width?: string;
+    height?: string;
+  };
 
-  export let size: string | undefined = undefined;
-  export let width: string | undefined = undefined;
-  export let height: string | undefined = undefined;
+  let {
+    icon,
+    color = "#000",
+    size = undefined,
+    width = undefined,
+    height = undefined,
+  }: SVGIconProps = $props();
 
-  $: w = size ?? width ?? "1rem";
-  $: h = size ?? height ?? "1rem";
+  let w = $derived(size ?? width ?? "1rem");
+  let h = $derived(size ?? height ?? "1rem");
+
+  let Icon = $derived(icons[icon]);
 </script>
 
-<svelte:component
-  this={icons[icon]}
-  style={`${color ? `fill: ${color};` : ""}width: ${w};height: ${h}`}
-/>
+<Icon style={`${color ? `fill: ${color};` : ""}width: ${w};height: ${h}`} />
