@@ -1,4 +1,4 @@
-import { svelte } from "@sveltejs/vite-plugin-svelte";
+import { sveltekit } from "@sveltejs/kit/vite";
 import { defineConfig } from "vite";
 import svelteSvg from "@poppanator/sveltekit-svg";
 import injectPreload from "unplugin-inject-preload/vite";
@@ -6,7 +6,7 @@ import injectPreload from "unplugin-inject-preload/vite";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    svelte(),
+    sveltekit(),
     svelteSvg(),
     injectPreload({
       files: [

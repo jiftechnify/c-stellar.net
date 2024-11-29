@@ -1,7 +1,7 @@
 <script lang="ts">
-  import IdentityCard, { type IdCardProps } from "../lib/IdentityCard.svelte";
+  import IdentityCard, { type IdCardProps } from "./IdentityCard.svelte";
 
-  import IconifyIcon from "../lib/icon/IconifyIcon.svelte";
+  import IconifyIcon from "./icon/IconifyIcon.svelte";
   import aegis from "../assets/aegis.webp";
   import leafDark from "../assets/leaf_dark.webp";
   import leafCastella from "../assets/leaf_castella.webp";
