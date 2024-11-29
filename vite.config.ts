@@ -20,4 +20,11 @@ export default defineConfig({
     host: "0.0.0.0",
     port: 15173,
   },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        api: "modern-compiler",
+      },
+    },
+  },
 });
