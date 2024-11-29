@@ -21,6 +21,15 @@ importers:
       '@poppanator/sveltekit-svg':
         specifier: ^5.0.0
         version: 5.0.0(rollup@4.27.4)(svelte@5.2.10)(svgo@3.3.2)(vite@5.4.11(@types/node@22.5.5)(sass@1.79.2))
+      '@sveltejs/adapter-auto':
+        specifier: ^3.0.0
+        version: 3.3.1(@sveltejs/kit@2.8.5(@sveltejs/vite-plugin-svelte@4.0.2(svelte@5.2.10)(vite@5.4.11(@types/node@22.5.5)(sass@1.79.2)))(svelte@5.2.10)(vite@5.4.11(@types/node@22.5.5)(sass@1.79.2)))
+      '@sveltejs/adapter-static':
+        specifier: ^3.0.6
+        version: 3.0.6(@sveltejs/kit@2.8.5(@sveltejs/vite-plugin-svelte@4.0.2(svelte@5.2.10)(vite@5.4.11(@types/node@22.5.5)(sass@1.79.2)))(svelte@5.2.10)(vite@5.4.11(@types/node@22.5.5)(sass@1.79.2)))
+      '@sveltejs/kit':
+        specifier: ^2.0.0
+        version: 2.8.5(@sveltejs/vite-plugin-svelte@4.0.2(svelte@5.2.10)(vite@5.4.11(@types/node@22.5.5)(sass@1.79.2)))(svelte@5.2.10)(vite@5.4.11(@types/node@22.5.5)(sass@1.79.2))
       '@sveltejs/vite-plugin-svelte':
         specifier: ^4.0.0
         version: 4.0.2(svelte@5.2.10)(vite@5.4.11(@types/node@22.5.5)(sass@1.79.2))
@@ -220,6 +229,9 @@ packages:
   '@jridgewell/trace-mapping@0.3.25':
     resolution: {integrity: sha512-vNk6aEwybGtawWmy/PzwnGDOjCkLWSD2wqvjGGAgOAwCGWySYXfYoxt00IJkTF+8Lb57DwOb3Aa0o9CApepiYQ==}
 
+  '@polka/url@1.0.0-next.28':
+    resolution: {integrity: sha512-8LduaNlMZGwdZ6qWrKlfa+2M4gahzFkprZiAt2TF8uS0qQgBizKXpXURqvTJ4WtmupWxaLqjRb2UCTe72mu+Aw==}
+
   '@poppanator/sveltekit-svg@5.0.0':
     resolution: {integrity: sha512-b7hk55SF0HjTS+xFgMG20hy6W0F/m+yRA/ZWcjnsa391rB3Ys3desCiUyIKQYcfvcyuRiQCPedUJMYgu00VdCA==}
     peerDependencies:
@@ -326,6 +338,25 @@ packages:
     cpu: [x64]
     os: [win32]
 
+  '@sveltejs/adapter-auto@3.3.1':
+    resolution: {integrity: sha512-5Sc7WAxYdL6q9j/+D0jJKjGREGlfIevDyHSQ2eNETHcB1TKlQWHcAo8AS8H1QdjNvSXpvOwNjykDUHPEAyGgdQ==}
+    peerDependencies:
+      '@sveltejs/kit': ^2.0.0
+
+  '@sveltejs/adapter-static@3.0.6':
+    resolution: {integrity: sha512-MGJcesnJWj7FxDcB/GbrdYD3q24Uk0PIL4QIX149ku+hlJuj//nxUbb0HxUTpjkecWfHjVveSUnUaQWnPRXlpg==}
+    peerDependencies:
+      '@sveltejs/kit': ^2.0.0
+
+  '@sveltejs/kit@2.8.5':
+    resolution: {integrity: sha512-5ry1jPd4r9knsphDK2eTYUFPhFZMqF0PHFfa8MdMQCqWaKwLSXdFMU/Vevih1I7C1/VNB5MvTuFl1kXu5vx8UA==}
+    engines: {node: '>=18.13'}
+    hasBin: true
+    peerDependencies:
+      '@sveltejs/vite-plugin-svelte': ^3.0.0 || ^4.0.0-next.1
+      svelte: ^4.0.0 || ^5.0.0-next.0
+      vite: ^5.0.3
+
   '@sveltejs/vite-plugin-svelte-inspector@3.0.1':
     resolution: {integrity: sha512-2CKypmj1sM4GE7HjllT7UKmo4Q6L5xFRd7VMGEWhYnZ+wc6AUVU01IBd7yUi6WnFndEwWoMNOd6e8UjoN0nbvQ==}
     engines: {node: ^18.0.0 || ^20.0.0 || >=22}
@@ -347,6 +378,9 @@ packages:
 
   '@tsconfig/svelte@5.0.4':
     resolution: {integrity: sha512-BV9NplVgLmSi4mwKzD8BD/NQ8erOY/nUE/GpgWe2ckx+wIQF5RyRirn/QsSSCPeulVpc3RA/iJt6DpfTIZps0Q==}
+
+  '@types/cookie@0.6.0':
+    resolution: {integrity: sha512-4Kh9a6B2bQciAhf7FSuMRRkUWecJgJu9nPnx3yzpsfXX/c50REIqpHY4C82bXP90qrLtXtkDxTZosYO3UpOwlA==}
 
   '@types/estree@1.0.6':
     resolution: {integrity: sha512-AYnb1nQyY49te+VRAVgmzfcgjYS91mY5P0TKUDCLEM+gNnA+3T6rWITXRLYCpahpqSQbN5cE+gHpnPyXjHWxcw==}
@@ -424,6 +458,10 @@ packages:
     resolution: {integrity: sha512-QrWXB+ZQSVPmIWIhtEO9H+gwHaMGYiF5ChvoJ+K9ZGHG/sVsa6yiesAD1GC/x46sET00Xlwo1u49RVVVzvcSkw==}
     engines: {node: '>= 10'}
 
+  cookie@0.6.0:
+    resolution: {integrity: sha512-U71cyTamuh1CRNCfpGY6to28lxvNwPG4Guz/EVjgf3Jmzv0vlDp1atT9eS5dDjMYHucpHbWns6Lwf3BKz6svdw==}
+    engines: {node: '>= 0.6'}
+
   css-select@5.1.0:
     resolution: {integrity: sha512-nwoRF1rvRRnnCqqY7updORDsuqKzqYJ28+oSMaJMMgOauh3fvwHqMS7EZpIPqK8GL+g9mKxF1vP/ZjSeNjEVHg==}
 
@@ -459,6 +497,9 @@ packages:
   deepmerge@4.3.1:
     resolution: {integrity: sha512-3sUqbMEc77XqpdNO7FRyRog+eW3ph+GYCbj+rK+uYyRMuwsVy0rMiVtPn+QJlKFvWP/1PYpapqYn0Me2knFn+A==}
     engines: {node: '>=0.10.0'}
+
+  devalue@5.1.1:
+    resolution: {integrity: sha512-maua5KUiapvEwiEAe+XnlZ3Rh0GD+qI1J/nb9vrJc3muPXvcF/8gXYTWF76+5DAqHyDUtOIImEuo0YKE9mshVw==}
 
   dijkstrajs@1.0.3:
     resolution: {integrity: sha512-qiSlmBq9+BCdCA/L46dw8Uy93mloxsPSbwnm5yrKn2vMPiy8KyAskTF6zuV/j5BMsmOGZDPs7KjU+mjb670kfA==}
@@ -526,11 +567,20 @@ packages:
     resolution: {integrity: sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow==}
     engines: {node: '>= 6'}
 
+  globalyzer@0.1.0:
+    resolution: {integrity: sha512-40oNTM9UfG6aBmuKxk/giHn5nQ8RVz/SS4Ir6zgzOv9/qC3kKZ9v4etGTcJbEl/NyVQH7FGU7d+X1egr57Md2Q==}
+
+  globrex@0.1.2:
+    resolution: {integrity: sha512-uHJgbwAMwNFf5mLst7IWLNg14x1CkeqglJb/K3doi4dw6q2IvAAmM/Y81kevy83wP+Sst+nutFTYOGg3d1lsxg==}
+
   iconify-icon@2.1.0:
     resolution: {integrity: sha512-lto4XU3bwTQnb+D/CsJ4dWAo0aDe+uPMxEtxyOodw9l7R9QnJUUab3GCehlw2M8mDHdeUu/ufx8PvRQiJphhXg==}
 
   immutable@4.3.7:
     resolution: {integrity: sha512-1hqclzwYwjRDFLjcFxOM5AYkkG0rpFPpr1RLPMEuGczoS7YA8gLhy8SWXYRAA/XwfEHpfo3cw5JGioS32fnMRw==}
+
+  import-meta-resolve@4.1.0:
+    resolution: {integrity: sha512-I6fiaX09Xivtk+THaMfAwnA3MVA5Big1WHF1Dfx9hFuvNIWpXnorlkzhcQf6ehrqQiiZECRt1poOAkPmer3ruw==}
 
   is-binary-path@2.1.0:
     resolution: {integrity: sha512-ZMERYes6pDydyuGidse7OsHxtbI7WVeUEozgR/g7rd0xUimYNlvZRE/K2MgZTjWy725IfelLeVcEM97mmtRGXw==}
@@ -589,6 +639,10 @@ packages:
   mri@1.2.0:
     resolution: {integrity: sha512-tzzskb3bG8LvYGFF/mDTpq3jpI6Q9wc3LEmBaghu+DdCssd1FakN7Bc0hVNmEyGq1bq3RgfkCb3cmQLpNPOroA==}
     engines: {node: '>=4'}
+
+  mrmime@2.0.0:
+    resolution: {integrity: sha512-eu38+hdgojoyq63s+yTpN4XMBdt5l8HhMhc4VKLO9KM5caLIBvUm4thi7fFaxyTmCKeNnXZ5pAlBwCUnhA09uw==}
+    engines: {node: '>=10'}
 
   ms@2.1.3:
     resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==}
@@ -673,6 +727,13 @@ packages:
   set-blocking@2.0.0:
     resolution: {integrity: sha512-KiKBS8AnWGEyLzofFfmvKwpdPzqiy16LvQfK3yv/fVH7Bj13/wl3JSR1J+rfgRE9q7xUJK4qvgS8raSOeLUehw==}
 
+  set-cookie-parser@2.7.1:
+    resolution: {integrity: sha512-IOc8uWeOZgnb3ptbCURJWNjWUPcO3ZnTTdzsurqERrP6nPyv+paC55vJM0LpOlT2ne+Ix+9+CRG1MNLlyZ4GjQ==}
+
+  sirv@3.0.0:
+    resolution: {integrity: sha512-BPwJGUeDaDCHihkORDchNyyTvWFhcusy1XMmhEVTQTwGeybFbp8YEmB+njbPnth1FibULBSBVwCQni25XlCUDg==}
+    engines: {node: '>=18'}
+
   source-map-js@1.2.1:
     resolution: {integrity: sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==}
     engines: {node: '>=0.10.0'}
@@ -702,9 +763,16 @@ packages:
     engines: {node: '>=14.0.0'}
     hasBin: true
 
+  tiny-glob@0.2.9:
+    resolution: {integrity: sha512-g/55ssRPUjShh+xkfx9UPDXqhckHEsHr4Vd9zX55oSdGZc/MD0m3sferOkwWtp98bv+kcVfEHtRJgBVJzelrzg==}
+
   to-regex-range@5.0.1:
     resolution: {integrity: sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ==}
     engines: {node: '>=8.0'}
+
+  totalist@3.0.1:
+    resolution: {integrity: sha512-sf4i37nQ2LBx4m3wB74y+ubopq6W/dIzXg0FDGjsYnZHVa1Da8FH853wlL2gtUhg+xJXjfk3kUZS3BRoQeoQBQ==}
+    engines: {node: '>=6'}
 
   tslib@2.7.0:
     resolution: {integrity: sha512-gLXCKdN1/j47AiHiOkJN69hJmcbGTHI0ImLmbYLHykhgeN0jVGola9yVjFgzCUklsZQMW55o+dW7IXv3RCXDzA==}
@@ -899,6 +967,8 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
 
+  '@polka/url@1.0.0-next.28': {}
+
   '@poppanator/sveltekit-svg@5.0.0(rollup@4.27.4)(svelte@5.2.10)(svgo@3.3.2)(vite@5.4.11(@types/node@22.5.5)(sass@1.79.2))':
     dependencies:
       '@rollup/pluginutils': 5.1.2(rollup@4.27.4)
@@ -970,6 +1040,33 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.27.4':
     optional: true
 
+  '@sveltejs/adapter-auto@3.3.1(@sveltejs/kit@2.8.5(@sveltejs/vite-plugin-svelte@4.0.2(svelte@5.2.10)(vite@5.4.11(@types/node@22.5.5)(sass@1.79.2)))(svelte@5.2.10)(vite@5.4.11(@types/node@22.5.5)(sass@1.79.2)))':
+    dependencies:
+      '@sveltejs/kit': 2.8.5(@sveltejs/vite-plugin-svelte@4.0.2(svelte@5.2.10)(vite@5.4.11(@types/node@22.5.5)(sass@1.79.2)))(svelte@5.2.10)(vite@5.4.11(@types/node@22.5.5)(sass@1.79.2))
+      import-meta-resolve: 4.1.0
+
+  '@sveltejs/adapter-static@3.0.6(@sveltejs/kit@2.8.5(@sveltejs/vite-plugin-svelte@4.0.2(svelte@5.2.10)(vite@5.4.11(@types/node@22.5.5)(sass@1.79.2)))(svelte@5.2.10)(vite@5.4.11(@types/node@22.5.5)(sass@1.79.2)))':
+    dependencies:
+      '@sveltejs/kit': 2.8.5(@sveltejs/vite-plugin-svelte@4.0.2(svelte@5.2.10)(vite@5.4.11(@types/node@22.5.5)(sass@1.79.2)))(svelte@5.2.10)(vite@5.4.11(@types/node@22.5.5)(sass@1.79.2))
+
+  '@sveltejs/kit@2.8.5(@sveltejs/vite-plugin-svelte@4.0.2(svelte@5.2.10)(vite@5.4.11(@types/node@22.5.5)(sass@1.79.2)))(svelte@5.2.10)(vite@5.4.11(@types/node@22.5.5)(sass@1.79.2))':
+    dependencies:
+      '@sveltejs/vite-plugin-svelte': 4.0.2(svelte@5.2.10)(vite@5.4.11(@types/node@22.5.5)(sass@1.79.2))
+      '@types/cookie': 0.6.0
+      cookie: 0.6.0
+      devalue: 5.1.1
+      esm-env: 1.2.1
+      import-meta-resolve: 4.1.0
+      kleur: 4.1.5
+      magic-string: 0.30.14
+      mrmime: 2.0.0
+      sade: 1.8.1
+      set-cookie-parser: 2.7.1
+      sirv: 3.0.0
+      svelte: 5.2.10
+      tiny-glob: 0.2.9
+      vite: 5.4.11(@types/node@22.5.5)(sass@1.79.2)
+
   '@sveltejs/vite-plugin-svelte-inspector@3.0.1(@sveltejs/vite-plugin-svelte@4.0.2(svelte@5.2.10)(vite@5.4.11(@types/node@22.5.5)(sass@1.79.2)))(svelte@5.2.10)(vite@5.4.11(@types/node@22.5.5)(sass@1.79.2))':
     dependencies:
       '@sveltejs/vite-plugin-svelte': 4.0.2(svelte@5.2.10)(vite@5.4.11(@types/node@22.5.5)(sass@1.79.2))
@@ -995,6 +1092,8 @@ snapshots:
   '@trysound/sax@0.2.0': {}
 
   '@tsconfig/svelte@5.0.4': {}
+
+  '@types/cookie@0.6.0': {}
 
   '@types/estree@1.0.6': {}
 
@@ -1067,6 +1166,8 @@ snapshots:
 
   commander@7.2.0: {}
 
+  cookie@0.6.0: {}
+
   css-select@5.1.0:
     dependencies:
       boolbase: 1.0.0
@@ -1098,6 +1199,8 @@ snapshots:
   decamelize@1.2.0: {}
 
   deepmerge@4.3.1: {}
+
+  devalue@5.1.1: {}
 
   dijkstrajs@1.0.3: {}
 
@@ -1178,11 +1281,17 @@ snapshots:
     dependencies:
       is-glob: 4.0.3
 
+  globalyzer@0.1.0: {}
+
+  globrex@0.1.2: {}
+
   iconify-icon@2.1.0:
     dependencies:
       '@iconify/types': 2.0.0
 
   immutable@4.3.7: {}
+
+  import-meta-resolve@4.1.0: {}
 
   is-binary-path@2.1.0:
     dependencies:
@@ -1229,6 +1338,8 @@ snapshots:
       mime-db: 1.52.0
 
   mri@1.2.0: {}
+
+  mrmime@2.0.0: {}
 
   ms@2.1.3: {}
 
@@ -1316,6 +1427,14 @@ snapshots:
 
   set-blocking@2.0.0: {}
 
+  set-cookie-parser@2.7.1: {}
+
+  sirv@3.0.0:
+    dependencies:
+      '@polka/url': 1.0.0-next.28
+      mrmime: 2.0.0
+      totalist: 3.0.1
+
   source-map-js@1.2.1: {}
 
   string-width@4.2.3:
@@ -1366,9 +1485,16 @@ snapshots:
       csso: 5.0.5
       picocolors: 1.1.0
 
+  tiny-glob@0.2.9:
+    dependencies:
+      globalyzer: 0.1.0
+      globrex: 0.1.2
+
   to-regex-range@5.0.1:
     dependencies:
       is-number: 7.0.0
+
+  totalist@3.0.1: {}
 
   tslib@2.7.0: {}
 
