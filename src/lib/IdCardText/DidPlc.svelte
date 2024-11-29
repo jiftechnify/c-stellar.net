@@ -1,7 +1,11 @@
 <script lang="ts">
   import Plain from "./Plain.svelte";
 
-  export let linkText: string;
+  type Props = {
+    linkText: string;
+  };
+  let { linkText }: Props = $props();
+
   const parseDidPlc = (text: string) => {
     if (text.startsWith("did:plc:")) {
       return {
@@ -13,7 +17,7 @@
       isDidPlc: false,
     };
   };
-  $: parsed = parseDidPlc(linkText);
+  let parsed = $derived(parseDidPlc(linkText));
 </script>
 
 {#if parsed.isDidPlc}

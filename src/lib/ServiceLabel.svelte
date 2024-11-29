@@ -1,4 +1,4 @@
-<script lang="ts" context="module">
+<script module lang="ts">
   import type { ServiceIconProps } from "./ServiceIcon.svelte";
 
   export type ServiceProps = {
@@ -10,8 +10,7 @@
 <script lang="ts">
   import ServiceIcon from "./ServiceIcon.svelte";
 
-  export let name: string;
-  export let icon: ServiceIconProps;
+  let { name, icon }: ServiceProps = $props();
 </script>
 
 <div class="service">

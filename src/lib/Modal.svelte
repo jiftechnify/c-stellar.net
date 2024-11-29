@@ -1,16 +1,38 @@
 <script lang="ts">
+  import type { EventHandler, MouseEventHandler } from "svelte/elements";
   import IconifyIcon from "./icon/IconifyIcon.svelte";
+  import type { Snippet } from "svelte";
 
-  export let showModal: boolean;
+  type ModalProps = {
+    showModal: boolean;
+    children: Snippet;
+  };
+
+  let { showModal = $bindable(), children }: ModalProps = $props();
 
   let dialog: HTMLDialogElement | undefined;
 
-  $: if (dialog && showModal) {
-    dialog.showModal();
-  }
+  $effect(() => {
+    if (dialog && showModal) {
+      dialog.showModal();
+    }
+  });
 
   // animation while the dialog is hiding
-  let hiding = false;
+  let hiding = $state(false);
+
+  const self = (fn: EventHandler) => {
+    return (
+      e: Event & {
+        currentTarget: EventTarget & Element;
+      },
+    ) => {
+      if (e.target === e.currentTarget) {
+        fn(e);
+      }
+    };
+  };
+
   const closeDialog = () => {
     if (dialog === undefined) {
       return;
@@ -18,6 +40,18 @@
     hiding = true;
     dialog.addEventListener("animationend", didHide, false);
   };
+
+  const handleClickDialog: MouseEventHandler<HTMLDialogElement> = (e) => {
+    if (e.target !== e.currentTarget) {
+      return;
+    }
+    closeDialog();
+  };
+
+  const handleClickCloseButton = () => {
+    closeDialog();
+  };
+
   const didHide = () => {
     if (dialog === undefined) {
       return;
@@ -28,28 +62,22 @@
   };
 </script>
 
-<!-- svelte-ignore a11y-click-events-have-key-events -->
-<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
+<!-- svelte-ignore a11y_click_events_have_key_events -->
+<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
 <dialog
   bind:this={dialog}
-  on:close={() => {
+  onclose={() => {
     showModal = false;
   }}
-  on:click|self={() => closeDialog()}
+  onclick={handleClickDialog}
   class:hiding
 >
-  <button
-    class="btn-close"
-    type="button"
-    on:click={() => {
-      closeDialog();
-    }}
-  >
+  <button class="btn-close" type="button" onclick={handleClickCloseButton}>
     <IconifyIcon icon="fluent:dismiss-12-filled" color="#333" size="1.1rem" />
   </button>
-  <!-- svelte-ignore a11y-no-static-element-interactions -->
-  <div on:click|stopPropagation>
-    <slot />
+  <!-- svelte-ignore a11y_no_static_element_interactions -->
+  <div onclick={(e) => e.stopPropagation()}>
+    {@render children()}
   </div>
 </dialog>
 
