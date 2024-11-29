@@ -33,7 +33,7 @@
   <figure>
     <figcaption>{caption}</figcaption>
     {#await qrImgUrl}
-      <div />
+      <div></div>
     {:then imgUrl}
       <img src={imgUrl} alt={caption} width={200} height={200} />
     {/await}

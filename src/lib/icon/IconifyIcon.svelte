@@ -21,7 +21,7 @@
   {color}
   width={w}
   height={h}
-/>
+></iconify-icon>
 
 <style>
   iconify-icon {
