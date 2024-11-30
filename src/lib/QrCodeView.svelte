@@ -6,9 +6,9 @@
 </script>
 
 <script lang="ts">
-  import IconifyIcon from "./icon/IconifyIcon.svelte";
   import QRCode from "qrcode";
 
+  import StyledIcon from "./StyledIcon.svelte";
   import IconCheckmark from "~icons/fluent/checkmark-12-filled";
   import IconClipboard from "~icons/fluent/clipboard-multiple-16-regular";
 
@@ -44,9 +44,9 @@
     <input type="text" readonly value={data} />
     <button type="button" name="copy-button" onclick={() => copyToClipboard()}>
       {#if copied}
-        <IconifyIcon icon={IconCheckmark} color="#0a0" size="1.2rem" />
+        <StyledIcon icon={IconCheckmark} color="#0a0" size="1.2rem" />
       {:else}
-        <IconifyIcon icon={IconClipboard} size="1.2rem" />
+        <StyledIcon icon={IconClipboard} size="1.2rem" />
       {/if}
     </button>
   </div>

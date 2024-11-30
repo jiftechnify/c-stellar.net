@@ -27,8 +27,8 @@
   import type { QrCodeProps } from "./QrCodeView.svelte";
   import QrCodeView from "./QrCodeView.svelte";
   import ServiceLabel from "./ServiceLabel.svelte";
-  import IconifyIcon from "./icon/IconifyIcon.svelte";
 
+  import StyledIcon from "./StyledIcon.svelte";
   import IconReload from "~icons/ci/arrows-reload-01";
   import IconQrCode from "~icons/fluent/qr-code-24-regular";
 
@@ -95,7 +95,7 @@
             aria-label="show an alternative identity"
             onclick={handleToggleIdLink}
           >
-            <IconifyIcon icon={IconReload} size="1.2rem" />
+            <StyledIcon icon={IconReload} size="1.2rem" />
           </button>
         {/if}
         {#if qrCode}
@@ -106,7 +106,7 @@
               showModal = true;
             }}
           >
-            <IconifyIcon icon={IconQrCode} size="1.2rem" />
+            <StyledIcon icon={IconQrCode} size="1.2rem" />
           </button>
         {/if}
       </div>
