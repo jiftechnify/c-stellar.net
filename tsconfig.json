@@ -11,6 +11,5 @@
 		"strict": true,
 		"moduleResolution": "bundler"
 	},
-  "exclude": ["functions/**/*"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "exclude": ["functions/**/*"]
 }

@@ -29,6 +29,9 @@
   import ServiceLabel from "./ServiceLabel.svelte";
   import IconifyIcon from "./icon/IconifyIcon.svelte";
 
+  import IconReload from "~icons/ci/arrows-reload-01";
+  import IconQrCode from "~icons/fluent/qr-code-24-regular";
+
   let {
     service,
     idLink,
@@ -92,7 +95,7 @@
             aria-label="show an alternative identity"
             onclick={handleToggleIdLink}
           >
-            <IconifyIcon icon="ci:arrows-reload-01" size="1.2rem" />
+            <IconifyIcon icon={IconReload} size="1.2rem" />
           </button>
         {/if}
         {#if qrCode}
@@ -103,7 +106,7 @@
               showModal = true;
             }}
           >
-            <IconifyIcon icon="fluent:qr-code-24-regular" size="1.2rem" />
+            <IconifyIcon icon={IconQrCode} size="1.2rem" />
           </button>
         {/if}
       </div>

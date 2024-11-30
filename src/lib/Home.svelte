@@ -6,6 +6,12 @@
   import leafDark from "../assets/leaf_dark.webp";
   import leafCastella from "../assets/leaf_castella.webp";
 
+  import IconMingcuteXLine from "~icons/mingcute/social-x-line";
+  import IconMingcuteBluesky from "~icons/mingcute/bluesky-social-fill";
+  import IconFeGithubAlt from "~icons/fe/github-alt";
+  import IconNotoKey from "~icons/noto/key";
+  import IconMdiGithub from "~icons/mdi/github";
+
   const bioItems = [
     "🇯🇵 Japanese",
     "👨‍💻 Full-stack™ SWE",
@@ -20,7 +26,7 @@
         name: "X",
         icon: {
           type: "iconify",
-          name: "mingcute:social-x-line",
+          icon: IconMingcuteXLine,
           color: "#000",
         },
       },
@@ -68,7 +74,7 @@
         name: "Bluesky",
         icon: {
           type: "iconify",
-          name: "mingcute:bluesky-social-fill",
+          icon: IconMingcuteBluesky,
           color: "#1185FE",
         },
       },
@@ -119,7 +125,7 @@
         name: "GitHub",
         icon: {
           type: "iconify",
-          name: "fe:github-alt",
+          icon: IconFeGithubAlt,
           color: "#333",
         },
       },
@@ -134,7 +140,7 @@
         name: "OpenPGP",
         icon: {
           type: "iconify",
-          name: "noto:key",
+          icon: IconNotoKey,
         },
       },
       idLink: {
@@ -189,7 +195,7 @@
       href="https://github.com/jiftechnify/c-stellar.net"
       aria-label="GitHub repository for this site"
     >
-      <IconifyIcon icon="mdi:github" size="1.1rem" />
+      <IconifyIcon icon={IconMdiGithub} size="1.1rem" />
     </a>
   </div>
 </footer>

@@ -9,6 +9,9 @@
   import IconifyIcon from "./icon/IconifyIcon.svelte";
   import QRCode from "qrcode";
 
+  import IconCheckmark from "~icons/fluent/checkmark-12-filled";
+  import IconClipboard from "~icons/fluent/clipboard-multiple-16-regular";
+
   let { data, caption }: QrCodeProps = $props();
 
   const qrImgUrl = QRCode.toDataURL(data, { width: 200 });
@@ -41,16 +44,9 @@
     <input type="text" readonly value={data} />
     <button type="button" name="copy-button" onclick={() => copyToClipboard()}>
       {#if copied}
-        <IconifyIcon
-          icon="fluent:checkmark-12-filled"
-          color="#0a0"
-          size="1.2rem"
-        />
+        <IconifyIcon icon={IconCheckmark} color="#0a0" size="1.2rem" />
       {:else}
-        <IconifyIcon
-          icon="fluent:clipboard-multiple-16-regular"
-          size="1.2rem"
-        />
+        <IconifyIcon icon={IconClipboard} size="1.2rem" />
       {/if}
     </button>
   </div>

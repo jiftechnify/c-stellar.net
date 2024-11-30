@@ -1,8 +1,10 @@
 <script lang="ts">
   import "iconify-icon";
+  import type { Component } from "svelte";
+  import type { SVGAttributes } from "svelte/elements";
 
   type IconifyIconProps = {
-    icon: string;
+    icon: Component<SVGAttributes<SVGSVGElement>>;
     color?: string;
     size?: string;
     width?: string;
@@ -10,7 +12,7 @@
   };
 
   let {
-    icon,
+    icon: Icon,
     color = "#000",
     size = undefined,
     width = undefined,
@@ -21,7 +23,9 @@
   let h = $derived(size ?? height ?? "1rem");
 </script>
 
-<iconify-icon
+<Icon style={`${color ? `fill: ${color};` : ""}width: ${w};height: ${h}`} />
+
+<!-- <iconify-icon
   style:--icon-w={w}
   style:--icon-h={h}
   style:--icon-color={color}
@@ -38,4 +42,4 @@
     height: var(--icon-h);
     color: var(--icon-color);
   }
-</style>
+</style> -->
