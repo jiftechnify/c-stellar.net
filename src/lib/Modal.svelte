@@ -1,7 +1,9 @@
 <script lang="ts">
   import type { EventHandler, MouseEventHandler } from "svelte/elements";
-  import IconifyIcon from "./icon/IconifyIcon.svelte";
   import type { Snippet } from "svelte";
+
+  import StyledIcon from "./StyledIcon.svelte";
+  import IconDismiss from "~icons/fluent/dismiss-12-filled";
 
   type ModalProps = {
     showModal: boolean;
@@ -73,7 +75,7 @@
   class:hiding
 >
   <button class="btn-close" type="button" onclick={handleClickCloseButton}>
-    <IconifyIcon icon="fluent:dismiss-12-filled" color="#333" size="1.1rem" />
+    <StyledIcon icon={IconDismiss} color="#333" size="1.1rem" />
   </button>
   <!-- svelte-ignore a11y_no_static_element_interactions -->
   <div onclick={(e) => e.stopPropagation()}>

@@ -1,10 +1,18 @@
 <script lang="ts">
   import IdentityCard, { type IdCardProps } from "./IdentityCard.svelte";
 
-  import IconifyIcon from "./icon/IconifyIcon.svelte";
   import aegis from "../assets/aegis.webp";
   import leafDark from "../assets/leaf_dark.webp";
   import leafCastella from "../assets/leaf_castella.webp";
+
+  import StyledIcon from "./StyledIcon.svelte";
+  import IconMingcuteXLine from "~icons/mingcute/social-x-line";
+  import IconMingcuteBluesky from "~icons/mingcute/bluesky-social-fill";
+  import IconFeGithubAlt from "~icons/fe/github-alt";
+  import IconNotoKey from "~icons/noto/key";
+  import IconMdiGithub from "~icons/mdi/github";
+  import IconNostr from "~icons/custom/nostr";
+  import IconConcrnt from "~icons/custom/concrnt";
 
   const bioItems = [
     "🇯🇵 Japanese",
@@ -19,8 +27,7 @@
       service: {
         name: "X",
         icon: {
-          type: "iconify",
-          name: "mingcute:social-x-line",
+          icon: IconMingcuteXLine,
           color: "#000",
         },
       },
@@ -35,8 +42,7 @@
       service: {
         name: "Nostr",
         icon: {
-          type: "svg",
-          name: "nostr",
+          icon: IconNostr,
           color: "hsl(265, 100%, 50%)",
         },
       },
@@ -67,8 +73,7 @@
       service: {
         name: "Bluesky",
         icon: {
-          type: "iconify",
-          name: "mingcute:bluesky-social-fill",
+          icon: IconMingcuteBluesky,
           color: "#1185FE",
         },
       },
@@ -93,8 +98,7 @@
       service: {
         name: "Concrnt",
         icon: {
-          type: "svg",
-          name: "concrnt",
+          icon: IconConcrnt,
         },
       },
       idLink: [
@@ -118,8 +122,7 @@
       service: {
         name: "GitHub",
         icon: {
-          type: "iconify",
-          name: "fe:github-alt",
+          icon: IconFeGithubAlt,
           color: "#333",
         },
       },
@@ -133,8 +136,7 @@
       service: {
         name: "OpenPGP",
         icon: {
-          type: "iconify",
-          name: "noto:key",
+          icon: IconNotoKey,
         },
       },
       idLink: {
@@ -189,7 +191,7 @@
       href="https://github.com/jiftechnify/c-stellar.net"
       aria-label="GitHub repository for this site"
     >
-      <IconifyIcon icon="mdi:github" size="1.1rem" />
+      <StyledIcon icon={IconMdiGithub} size="1.1rem" />
     </a>
   </div>
 </footer>

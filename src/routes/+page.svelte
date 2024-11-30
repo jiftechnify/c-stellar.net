@@ -1,6 +1,5 @@
 <script lang="ts">
   import Home from "../lib/Home.svelte";
-  import "../global.scss";
 </script>
 
 <svelte:head>
